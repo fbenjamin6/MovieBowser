@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family:'DM Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #030712;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.hero-slider-ul{
+  right: calc((100vw - 1600px)/2 + 40px);
+}
+
+@media screen and (max-width: 1600px) {
+  .hero-slider-ul{
+    right: 48px;
+  }
+}
+
+.RowOfMovies:hover .RowOfMovies-border {
+  width: 60%;
+}
+
+.movieList-link-popular.active ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(52px);
+}
+.movieList-link-rated.active ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(212px);
+}
+.movieList-link-trending.active ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(347px);
+}
+
+.movieList-link-popular:hover ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(52px);
+}
+.movieList-link-rated:hover ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(212px);
+}
+.movieList-link-trending:hover ~ .movieList-link-border {
+  opacity: 1;
+  transform: translateX(347px);
+}
