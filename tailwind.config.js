@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       content: {
-        chevronRight: 'url("./assets/chevronRight.png")'
+        chevronRight: 'url("./assets/chevronRight.png")',
+        playVideoIcon: 'url(./assets/videoHoverPlay.png)'
       }
     }
   },

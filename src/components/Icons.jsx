@@ -1,9 +1,17 @@
 import React from 'react'
-import star from '../assets/star2.png'
+import starIcon from '../assets/star2.png'
+import playIcon from '../assets/playIcon.png'
 
 export function StarRateIcon ({ classes }) {
   const className = `w-[22px] inline ${classes}`
   return (
-    <img src={star} alt='' className={className}></img>
+    <img src={starIcon} alt='' className={className}></img>
+  )
+}
+
+export function PlayIcon ({ classes }) {
+  const className = `${classes}`
+  return (
+    <img src={playIcon} alt='' className={className}></img>
   )
 }

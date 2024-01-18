@@ -6,13 +6,16 @@ const options = {
   }
 }
 
-export function searchMovies ({ type, id }) {
+export function searchMovies ({ type, id, query, page, genre }) {
   const searchs = {
     trending: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US',
     top_rated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US',
     popular: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
-    byId: `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+    byId: `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    byName: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`,
+    byGenre: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
   }
+  if (type === 'byName' && query === undefined) return
   return fetch(searchs[type], options)
     .then(res => res.json())
     .then(res => {
@@ -25,6 +28,7 @@ export function searchMovies ({ type, id }) {
           bigPoster: movie.backdrop_path,
           overview: movie.overview,
           rate: movie.vote_average,
+          voteCount: movie.vote_count,
           date: movie.release_date,
           genres: movie.genres,
           duration: movie.runtime

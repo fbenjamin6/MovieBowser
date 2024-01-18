@@ -1,40 +1,32 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 import { searchMovies } from '../services/searchMovies'
 
-export function useMovies () {
+export function useMovies ({ type, quantity, id, query, genre, page }) {
   const [movies, setMovies] = useState()
+  const timeoutRef = useRef(0)
 
-  const getHomePageMovies = useCallback(async ({ type, quantity }) => {
-    const newMovies = await searchMovies({ type })
-    const newMoviesSliced = newMovies.slice(0, quantity)
-    console.log(newMoviesSliced)
-    setMovies(newMoviesSliced)
-  }, [])
-
-  const getPageMovies = useCallback(async ({ type }) => {
-    const newMovies = await searchMovies({ type })
+  const getMovies = useCallback(async () => {
+    if (query?.length < 3) return
+    const newMovies = await searchMovies({ type, id, query, genre, page })
+    if (quantity !== undefined) {
+      const newMoviesSliced = newMovies?.slice(0, quantity)
+      setMovies(newMoviesSliced)
+      return
+    }
     setMovies(newMovies)
-  }, [])
+  }, [{ type }])
 
-  const getMovieByID = useCallback(async ({ id }) => {
-    const newMovies = await searchMovies({ type: 'byId', id })
-    setMovies(newMovies)
-  }, [])
+  useEffect(() => {
+    if (!type) return
+    if (type === 'byName' && query.length < 3) return
 
-  // const getMovies = useCallback(async ({ type, quantity, id }) => {
-  //   const newMovies = await searchMovies({ type, id })
+    timeoutRef.current = setTimeout(() => {
+      getMovies()
+    }, 300)
+    return () => {
+      clearTimeout(timeoutRef.current)
+    }
+  }, [id, genre, query])
 
-  //   if (quantity !== undefined) {
-  //     const newMoviesSliced = newMovies.slice(0, quantity)
-  //     setMovies(newMoviesSliced)
-  //     return
-  //   }
-  //   setMovies(newMovies)
-  // }, [])
-
-  // useEffect(() => {
-  //   getMovies({type, quantity, id})
-  // }, [])
-
-  return { movies, getHomePageMovies, getPageMovies, getMovieByID }
+  return { movies, getMovies }
 }

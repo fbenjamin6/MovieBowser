@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { MovieCard } from './MovieCard'
 import { useMovies } from '../hooks/useMovies'
 import { Link } from 'wouter'
 
 export function RowOfMovies ({ rowTitle, type, href }) {
-  const { movies, getHomePageMovies } = useMovies()
-
-  useEffect(() => {
-    getHomePageMovies({ type, quantity: 6 })
-  }, [])
+  const { movies } = useMovies({ type, quantity: 6 })
 
   return (
     <section className='px-12 py-20 bg-gray-950'>

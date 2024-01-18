@@ -1,22 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { searchVideos } from '../services/searchVideos'
 
-export function useVideos () {
+export function useVideos ({ type, id }) {
   const [videos, setVideos] = useState()
   const [trailer, setTrailer] = useState()
 
-  const getTrailer = async (id) => {
+  const getVideos = async () => {
     const { results } = await searchVideos(id)
-    console.log(results)
-    const newTrailer = results.find(({ name, type }) => (name.includes('Official Trailer') && type === 'Trailer') === true)
-    setTrailer(newTrailer?.key)
-
-    // hay que utilizar el getvideos para no tner que llamar 2 veces a la api
+    setVideos(results)
   }
 
-  const getVideos = () => {
+  useEffect(() => {
+    getVideos()
+  }, [id])
 
-  }
+  useEffect(() => {
+    if (type !== 'trailer') return
+    const newTrailer = videos?.find(({ name, type }) => (name.includes('Official Trailer') && type === 'Trailer') === true)
+    return setTrailer(newTrailer?.key)
+  }, [videos])
 
-  return { trailer, getTrailer }
+  return { trailer, videos }
 }
