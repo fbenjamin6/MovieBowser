@@ -6,7 +6,7 @@ import { useCredits } from '../hooks/useCredits'
 import { MovieInfo } from '../components/MovieInfo'
 import { MovieVideos } from '../components/MovieVideos'
 import { TopCast } from '../components/TopCast'
-import { VideoModal } from '../components/videoModal'
+import { VideoModal } from '../components/VideoModal'
 
 export function MoviePage () {
   const params = useParams()
