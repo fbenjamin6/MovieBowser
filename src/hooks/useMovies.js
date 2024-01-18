@@ -19,10 +19,14 @@ export function useMovies ({ type, quantity, id, query, genre, page }) {
   useEffect(() => {
     if (!type) return
     if (type === 'byName' && query.length < 3) return
+    if (type === 'byName' && query.length >= 3) {
+      timeoutRef.current = setTimeout(() => {
+        getMovies()
+      }, 300)
+      return
+    }
+    getMovies()
 
-    timeoutRef.current = setTimeout(() => {
-      getMovies()
-    }, 300)
     return () => {
       clearTimeout(timeoutRef.current)
     }
