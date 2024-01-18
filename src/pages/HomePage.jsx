@@ -3,7 +3,7 @@ import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
 import { MovieIndexProvider } from '../context/movieIndex'
 import { RowOfMovies } from '../components/RowOfMovies'
-import { VideoModal } from '../components/videoModal'
+import { VideoModal } from '../components/VideoModal'
 
 export function HomePage () {
   return (
