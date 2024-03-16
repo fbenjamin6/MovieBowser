@@ -6,7 +6,7 @@ export function Hero () {
   const { movies } = useMovies({ type: 'trending', quantity: 5 })
 
   return (
-    <section id="hero" className="overflow-hidden relative max-w-full">
+    <section id="hero" className="overflow-hidden relative max-w-full h-[800px]">
       {movies && <HeroSlider movies={movies}></HeroSlider>}
     </section>
   )

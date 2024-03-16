@@ -15,7 +15,7 @@ export function HeroMovie ({ bigPoster, title, overview, id, rate }) {
             <h1 className='text-5xl'>{title}</h1>
             <span className='flex gap-3 items-end'> <img src={star} alt="" className='w-[26px] inline'/> {rate.toFixed(1)} / 10 </span>
             <p className='text-sm'>{overview}</p>
-            <ButtonWatchTrailer trailer={trailer} classes={'self-start bg-red-800 py-1.5 px-4 font-semibold rounded-md flex items-center gap-2'} />
+            <ButtonWatchTrailer trailer={trailer} classes={'self-start font-semibold rounded-md gap-2'} />
           </div>
         </article>
       </div>

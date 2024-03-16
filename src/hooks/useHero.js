@@ -1,5 +1,5 @@
 import { useRef, useEffect, useContext, useState } from 'react'
-import { MovieIndexContext } from '../context/movieIndex'
+import { MovieIndexContext } from '../context/movieIndexContext'
 
 export function useHero (index) {
   const { movieIndex, setMovieIndex, isClicked, setIsClicked } = useContext(MovieIndexContext)

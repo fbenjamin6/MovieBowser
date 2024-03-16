@@ -2,7 +2,7 @@ import React, { useMemo, useContext } from 'react'
 import { HeroMovie } from './HeroMovie'
 import { HeroSliderLi } from './HeroSliderLi'
 import { useHero } from '../hooks/useHero'
-import { MovieIndexContext } from '../context/movieIndex'
+import { MovieIndexContext } from '../context/movieIndexContext'
 
 export function HeroSlider ({ movies }) {
   const { handleClick } = useHero()
@@ -26,7 +26,7 @@ export function HeroSlider ({ movies }) {
         })}
       </ul>
 
-      <div className='h-[800px] transition-transform duration-300' style={{ transform: `translateY(${movieIndex * -100}%)` }}>
+      <div className='h-full transition-transform duration-300' style={{ transform: `translateY(${movieIndex * -100}%)` }}>
         {mappedMovies}
       </div>
     </>

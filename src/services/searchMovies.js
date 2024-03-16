@@ -8,9 +8,9 @@ const options = {
 
 export function searchMovies ({ type, id, query, page, genre }) {
   const searchs = {
-    trending: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US',
-    top_rated: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US',
-    popular: 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+    trending: `https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${page}`,
+    top_rated: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`,
+    popular: `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
     byId: `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
     byName: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`,
     byGenre: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
@@ -19,8 +19,17 @@ export function searchMovies ({ type, id, query, page, genre }) {
   return fetch(searchs[type], options)
     .then(res => res.json())
     .then(res => {
+      console.log(res)
+
+      const totalPages = res.total_pages
       const searchResults = id !== undefined ? [res] : res.results
-      const mappedMovies = searchResults?.map(movie => {
+      // tengo que filtrar las peliculas que tengan data vaciax
+      const filteredMovies = searchResults.filter(movie => {
+        if (!movie.poster_path || !movie.release_date || !movie.vote_average || !movie.vote_count) {
+          return false
+        } else { return true }
+      })
+      const mappedMovies = filteredMovies?.map(movie => {
         return ({
           id: movie.id,
           title: movie.title,
@@ -34,7 +43,8 @@ export function searchMovies ({ type, id, query, page, genre }) {
           duration: movie.runtime
         })
       })
-      return mappedMovies
+
+      return { movies: mappedMovies, totalPages }
     })
     .catch(err => console.error(err))
 }

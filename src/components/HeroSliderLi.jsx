@@ -1,5 +1,5 @@
 import { React, useContext } from 'react'
-import { MovieIndexContext } from '../context/movieIndex'
+import { MovieIndexContext } from '../context/movieIndexContext'
 import { useHero } from '../hooks/useHero'
 
 export function HeroSliderLi ({ index, handleClick }) {

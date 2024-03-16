@@ -2,14 +2,20 @@ import React from 'react'
 import loupe from '../assets/loupe.png'
 import { useSearch } from '../hooks/useSearch'
 import { Link } from 'wouter'
+import { useMovies } from '../hooks/useMovies'
 
 export function Browser () {
-  const { value, setValue, handleSubmit, movies, display, setDisplay } = useSearch()
+  const { value, setValue, handleSubmit, display, setDisplay } = useSearch()
+  const { movies } = useMovies({ type: 'byName', query: value, quantity: 10 })
 
   return (
     <div className='relative' onPointerLeave={() => setDisplay(false)}>
       <form onSubmit={(e) => handleSubmit(e)} action="" className='flex rounded-md border-white border-2 px-2.5 py-1.5 h-9' >
-        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} onFocus={() => setDisplay(true)} onPointerEnter={() => value.length > 3 ? setDisplay(true) : setDisplay(false)} className='w-72 bg-transparent focus-visible:outline-none'/>
+        <input type="text" value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onFocus={() => setDisplay(true)}
+        onPointerEnter={() => value.length > 3 ? setDisplay(true) : setDisplay(false)}
+        className='w-72 bg-transparent focus-visible:outline-none'/>
         <button type="submit" ><img src={loupe} alt="" /></button>
       </form>
       <ul className={`${display ? 'flex' : 'hidden'} flex-col rounded absolute bg-gray-900/60 backdrop-blur w-full max-h-[400px] overflow-auto scroll` } >

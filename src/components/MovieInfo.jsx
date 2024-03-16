@@ -36,7 +36,7 @@ export function MovieInfo ({ movie, Acting, Writing, Directing }) {
           <div className='flex gap-3'>
             {genres.map(({ id, name }) => {
               return (
-                <Link href={`/search/genre=${id}/page=1`} key={id}>
+                <Link href={`/search/genre=${id}`} key={id}>
                   <a className='rounded-3xl font-semibold border-gray-100 border-solid border px-4 py-1 text-gray-100 bg-gray-950 bg-opacity-60 transition duration-300 hover:border-gray-300 hover:bg-gray-300 hover:text-black '>{name}</a>
                 </Link>
               )
@@ -57,7 +57,7 @@ export function MovieInfo ({ movie, Acting, Writing, Directing }) {
             if (index >= 3) return []
             return (<span className='text-white' key={index}> {star.name}</span>)
           })}</h4>
-          <ButtonWatchTrailer trailer={trailer } classes={'flex items-center gap-3 rounded-3xl border px-4 py-1.5 w-max bg-gray-950 bg-opacity-60 text-lg'} imgWidth={'w-[18px]'}/>
+          <ButtonWatchTrailer trailer={trailer } classes={'gap-3 rounded-3xl  w-max '} imgWidth={'w-[18px] '}/>
         </div>
       </article>
     </section>

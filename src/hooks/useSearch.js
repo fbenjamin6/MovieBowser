@@ -1,13 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'wouter'
-import { useMovies } from './useMovies'
 
 export function useSearch () {
   const [value, setValue] = useState('')
   const [location, setLocation] = useLocation()
   const [display, setDisplay] = useState(false)
   const timeoutRef = useRef(0)
-  const { movies } = useMovies({ type: 'byName', query: value, quantity: 10, page: 1 })
 
   useEffect(() => {
     setDisplay(false)
@@ -25,9 +23,9 @@ export function useSearch () {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (value.length < 3) return
-    const searchQuery = `/search/q=${value}/page=1`
+    const searchQuery = `/search/q=${value}`
     setLocation(searchQuery)
   }
 
-  return { value, setValue, handleSubmit, movies, display, setDisplay }
+  return { value, setValue, handleSubmit, display, setDisplay }
 }

@@ -7,6 +7,7 @@ import { MovieInfo } from '../components/MovieInfo'
 import { MovieVideos } from '../components/MovieVideos'
 import { TopCast } from '../components/TopCast'
 import { VideoModal } from '../components/VideoModal'
+import { Footer } from '../components/Footer'
 
 export function MoviePage () {
   const params = useParams()
@@ -24,7 +25,7 @@ export function MoviePage () {
         <TopCast Acting={Acting}></TopCast>
       </>
       ) }
-
+      <Footer/>
     </>
   )
 }
