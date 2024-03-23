@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { searchCredits } from '../services/searchCredits'
+import { useLanguageContext } from './useLanguageContext'
 
 export function useCredits ({ id }) {
   const [credits, setCredits] = useState({
@@ -7,11 +8,12 @@ export function useCredits ({ id }) {
     Writing: [],
     Directing: []
   })
+  const { langToUse } = useLanguageContext()
 
   useEffect(() => {
     if (id === undefined) return
 
-    searchCredits({ id })
+    searchCredits({ id, lang: langToUse })
       .then(movieCredits => {
         const newCredits = {
           Acting: [],
@@ -38,7 +40,7 @@ export function useCredits ({ id }) {
           setCredits(newCredits)
         })
       })
-  }, [id])
+  }, [id, langToUse])
 
   const isAlreadyIncluded = (array, nameToCompare) => {
     let included = false

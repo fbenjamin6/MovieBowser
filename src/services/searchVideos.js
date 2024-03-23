@@ -6,7 +6,7 @@ const options = {
   }
 }
 
-export function searchVideos (id) {
-  return fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
+export function searchVideos ({ id, lang }) {
+  return fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=${lang}`, options)
     .then(response => response.json())
 }

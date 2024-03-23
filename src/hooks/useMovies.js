@@ -1,25 +1,34 @@
 import { useCallback, useEffect, useState, useRef } from 'react'
 import { searchMovies } from '../services/searchMovies'
+import { useLanguageContext } from './useLanguageContext'
 
 export function useMovies ({ type, quantity, id, query, genre }) {
   const [movies, setMovies] = useState()
+  const [newType, setNewType] = useState(type)
   const timeoutRef = useRef(0)
   const [totalPages, setTotalPages] = useState(1)
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const observer = useRef()
+  const { langToUse } = useLanguageContext()
+
+  useEffect(() => {
+    setNewType(type)
+    setPage(1)
+    setLoading(true)
+  }, [type])
 
   const getMovies = useCallback(async () => {
     if (query?.length < 3) return
-
-    const { movies: newMovies, totalPages: newTotalPages } = await searchMovies({ type, id, query, genre, page })
+    setLoading(true)
+    const { movies: newMovies, totalPages: newTotalPages } = await searchMovies({ type: newType, id, query, genre, page, lang: langToUse })
     if (quantity !== undefined) {
       const newMoviesSliced = newMovies?.slice(0, quantity)
       return newMoviesSliced
     }
     setTotalPages(newTotalPages)
     return newMovies
-  }, [{ type, page }])
+  }, [{ type }])
 
   const settingMovies = async () => {
     const newMovies = await getMovies()
@@ -40,12 +49,12 @@ export function useMovies ({ type, quantity, id, query, genre }) {
 
     return () => {
       clearTimeout(timeoutRef.current)
+      if (newType === 'byId' || quantity) return
+      setMovies([])
     }
-  }, [id, genre, query, type])
+  }, [id, genre, query, newType, langToUse])
 
   // INFINITE SCROLL
-
-  // agregar un estado para saber si tiene mas paginas, si no tiene mas paginas o tiene mas de 30 o 40 paginas, cortar el observer y la paginacion
 
   const lastMovieRef = useCallback((ref) => {
     if (observer.current) observer.current.disconnect()
@@ -54,13 +63,11 @@ export function useMovies ({ type, quantity, id, query, genre }) {
         setPage(prevPage => (prevPage += 1))
       }
     })
-
-    setLoading(false)
     if (ref) observer.current.observe(ref)
   }, [movies])
 
   useEffect(() => {
-    if (!movies) return
+    if (!movies || page === 1) return
 
     setLoading(true)
     const gettingMovies = getMovies()

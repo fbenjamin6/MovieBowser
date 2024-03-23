@@ -6,10 +6,9 @@ const options = {
   }
 }
 
-export function searchCredits ({ id, lang }) {
-  if (id === undefined) return
-  return fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=${lang}`, options)
+export function searchGenres ({ lang }) {
+  return fetch(`https://api.themoviedb.org/3/genre/movie/list?language=${lang}`, options)
     .then(response => response.json())
-    .then(response => response)
+    .then(response => response.genres)
     .catch(err => console.error(err))
 }

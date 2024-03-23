@@ -6,21 +6,19 @@ const options = {
   }
 }
 
-export function searchMovies ({ type, id, query, page, genre }) {
+export function searchMovies ({ type, id, query, page, genre, lang }) {
   const searchs = {
-    trending: `https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${page}`,
-    top_rated: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`,
-    popular: `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
-    byId: `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-    byName: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`,
-    byGenre: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
+    trending: `https://api.themoviedb.org/3/trending/movie/week?language=${lang}&page=${page}`,
+    top_rated: `https://api.themoviedb.org/3/movie/top_rated?language=${lang}&page=${page}`,
+    popular: `https://api.themoviedb.org/3/movie/popular?language=${lang}&page=${page}`,
+    byId: `https://api.themoviedb.org/3/movie/${id}?language=${lang}`,
+    byName: `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=${lang}&page=${page}`,
+    byGenre: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
   }
   if (type === 'byName' && query === undefined) return
   return fetch(searchs[type], options)
     .then(res => res.json())
     .then(res => {
-      console.log(res)
-
       const totalPages = res.total_pages
       const searchResults = id !== undefined ? [res] : res.results
       // tengo que filtrar las peliculas que tengan data vaciax
