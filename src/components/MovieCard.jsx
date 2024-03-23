@@ -5,7 +5,7 @@ import { StarRateIcon } from './Icons'
 export function MovieCard ({ movie, lastMovieRef, newClasses }) {
   const { id, title, date, rate, poster } = movie
   const imgSrc = `https://image.tmdb.org/t/p/original${poster}`
-  const classes = newClasses + ' relative min-h-[180px]  rounded bg-contain bg-center bg-no-repeat flex flex-col gap-2 rounded-b-md justify-end before:content-[""] before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t hover:opacity-90 transition from-black/90 via-black/10 to-transparent '
+  const classes = newClasses + ' w-full relative min-h-[180px]  rounded bg-contain bg-center bg-no-repeat flex flex-col gap-2 rounded-b-md justify-end before:content-[""] before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t hover:opacity-90 transition from-black/90 via-black/10 to-transparent '
 
   return (
     <Link href={`/movie/${id}`} ref={lastMovieRef}>

@@ -15,10 +15,10 @@ export function RowOfMovies ({ rowTitle, type, href }) {
           <div className='RowOfMovies-border mt-1 w-1/3 h-[4px] bg-cyan-500 rounded transition-all duration-500'></div>
         </a>
       </Link>
-      <div className='flex justify-between'>
+      <div className='flex justify-between gap-3'>
         {movies?.map(movie => {
           return (
-            <MovieCard key={movie.id} id={movie.id} title={movie.title} date={movie.date} rate={movie.rate} poster={movie.poster}></MovieCard>
+            <MovieCard key={movie.id} movie={movie}></MovieCard>
           )
         })}
       </div>

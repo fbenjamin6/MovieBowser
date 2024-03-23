@@ -14,12 +14,12 @@ export function HomePage () {
       <VideoModal/>
       <Header/>
       <Hero/>
-      <Carousel type={'popular'}>
+      {/* <Carousel type={'popular'}>
         Most Popular Movies
-      </Carousel>
-      {// <RowOfMovies rowTitle={'Most Popular Movies'} type={'popular'} href={'/list/movies/popular'}/>
-      // <RowOfMovies rowTitle={'Top Rated Movies'} type={'top_rated'} href={'/list/movies/top_rated'}/>
-      }
+      </Carousel> */}
+       <RowOfMovies rowTitle={'Most Popular Movies'} type={'popular'} href={'/list/movies/popular'}/>
+       <RowOfMovies rowTitle={'Top Rated Movies'} type={'top_rated'} href={'/list/movies/top_rated'}/>
+
       <Footer/>
     </MovieIndexProvider>
   )
