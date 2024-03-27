@@ -24,12 +24,12 @@ section {
 }
 
 .hero-slider-ul{
-  right: calc((100vw - 1600px)/2 + 40px);
+  right: calc((100vw - 1600px)/2 + 56px);
 }
 
 @media screen and (max-width: 1600px) {
   .hero-slider-ul{
-    right: 48px;
+    right: 64px;
   }
 }
 
@@ -66,4 +66,9 @@ section {
 .GroupOfMovies {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+
+.MovieTopCast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
 }

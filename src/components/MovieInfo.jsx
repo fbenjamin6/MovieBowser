@@ -9,7 +9,7 @@ export function MovieInfo ({ movie, Acting, Writing, Directing }) {
   const { trailer } = useVideos({ type: 'trailer', id })
 
   return (
-    <section className='pt-16 px-12 gap-8 relative flex'>
+    <section className='pt-16 px-16 gap-8 relative flex'>
       <img src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" className='absolute w-full left-0 right-0 m-auto blur-3xl opacity-40 -z-10 pt-16 h-full'/>
       <img src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" className='mt-4 w-[400px]'/>
       <article className='w-full'>

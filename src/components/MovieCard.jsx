@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'wouter'
 import { StarRateIcon } from './Icons'
 
-export function MovieCard ({ movie, lastMovieRef, newClasses }) {
+export function MovieCard ({ movie, lastMovieRef, newClasses, setWidth }) {
   const { id, title, date, rate, poster } = movie
   const imgSrc = `https://image.tmdb.org/t/p/original${poster}`
-  const classes = newClasses + ' w-full relative min-h-[180px]  rounded bg-contain bg-center bg-no-repeat flex flex-col gap-2 rounded-b-md justify-end before:content-[""] before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t hover:opacity-90 transition from-black/90 via-black/10 to-transparent '
-
+  const classes = newClasses + ' w-full MovieCard  relative min-h-[180px]  rounded bg-contain bg-center bg-no-repeat flex flex-col gap-2 rounded-b-md justify-end before:content-[""] before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t hover:opacity-90 transition from-black/90 via-black/10 to-transparent '
+  // agregarle width a un article padre
   return (
     <Link href={`/movie/${id}`} ref={lastMovieRef}>
-      <a className={classes}>
+      <a className={classes} style={ { width: setWidth } }>
         <img src={imgSrc} alt="" className='h-full' />
         <div className='py-1.5 px-3 z-20 absolute w-full' >
           <h3>{title}</h3>

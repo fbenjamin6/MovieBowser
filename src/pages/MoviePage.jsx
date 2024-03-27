@@ -4,8 +4,8 @@ import { Header } from '../components/Header'
 import { useMovies } from '../hooks/useMovies'
 import { useCredits } from '../hooks/useCredits'
 import { MovieInfo } from '../components/MovieInfo'
-import { MovieVideos } from '../components/MovieVideos'
-import { TopCast } from '../components/TopCast'
+import { CarouselOfVideos } from '../components/CarouselOfVideos'
+import { MovieTopCast } from '../components/MovieTopCast'
 import { VideoModal } from '../components/VideoModal'
 import { Footer } from '../components/Footer'
 
@@ -21,8 +21,8 @@ export function MoviePage () {
       <>
         <VideoModal/>
         <MovieInfo movie={movies[0]} Acting={Acting} Writing={Writing} Directing={Directing}></MovieInfo>
-        <MovieVideos id={params.id}></MovieVideos>
-        <TopCast Acting={Acting}></TopCast>
+        <CarouselOfVideos id={params.id}></CarouselOfVideos>
+        <MovieTopCast Acting={Acting}></MovieTopCast>
       </>
       ) }
       <Footer/>

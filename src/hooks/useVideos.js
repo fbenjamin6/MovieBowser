@@ -9,6 +9,7 @@ export function useVideos ({ type, id }) {
 
   const getVideos = async () => {
     const { results } = await searchVideos({ id, lang: langToUse })
+    console.log(results)
     setVideos(results)
   }
 
