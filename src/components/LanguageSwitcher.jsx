@@ -20,7 +20,7 @@ export function LanguageSwitcher () {
 
   return (
     <div className='relative font-semibold' onPointerLeave={() => setIsVisible(false)}>
-      <button onClick={handleClick} className={`relative w-20 flex items-center gap-2 bg-slate-800 justify-center rounded border transition-colors duration-200 ${isVisible ? 'border-cyan-500' : 'border-white'} text-white bg-opacity-90 py-0.5 z-50`}>{language} <img className='w-6' src={language === 'EN' ? EN : ES} alt="" /></button>
+      <button onClick={handleClick} className={`relative w-20 flex items-center gap-2  justify-center rounded border transition-colors duration-200 ${isVisible ? 'border-cyan-500 bg-slate-800' : 'border-white bg-slate-800/40'} text-white bg-opacity-90 py-0.5 z-50`}>{language} <img className='w-6' src={language === 'EN' ? EN : ES} alt="" /></button>
       <div className={`absolute w-full bg-slate-800 bg-opacity-90 rounded-b transition-all duration-200 ${isVisible ? 'opacity-100 translate-y-0' : ' opacity-0 -translate-y-2 pointer-events-none'}`}>
         <ul>
           <li onClick={() => handleLanguage('EN')} className='flex items-center justify-center gap-2 my-1 cursor-pointer'>EN <img className='w-6' src={EN} alt="" /></li>

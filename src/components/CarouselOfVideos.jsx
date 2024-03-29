@@ -7,7 +7,6 @@ import { MovieVideo } from './MovieVideo'
 export function CarouselOfVideos ({ id, children }) {
   const { carouselRef, itemsToShow, isFirst, handleSlide, isScrollNeeded, handleScrollNeeded } = useCarousel({ type: 'video' })
   const { videos } = useVideos({ id })
-  console.log(isScrollNeeded)
 
   return (
     <section className='px-16 py-20 w-full'>

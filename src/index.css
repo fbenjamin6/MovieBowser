@@ -18,6 +18,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: #08b7d6e6;
+  border-radius: 10px;
+  border: 3px solid #282828;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #282828;
+}
+
 section {
   max-width: 1600px;
   margin: auto;
@@ -72,3 +83,5 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
 }
+
+

@@ -41,18 +41,21 @@ export function useMovies ({ type, quantity, id, query, genre }) {
     if (type === 'byName' && query.length < 3) return
     if (type === 'byName' && query.length >= 3) {
       timeoutRef.current = setTimeout(() => {
+        console.log('tiemout')
         settingMovies()
-      }, 300)
-    } else {
-      settingMovies()
+      }, 200)
     }
 
     return () => {
       clearTimeout(timeoutRef.current)
-      if (newType === 'byId' || quantity) return
       setMovies([])
     }
-  }, [id, genre, query, newType, langToUse])
+  }, [query])
+
+  useEffect(() => {
+    if (!type) return
+    settingMovies()
+  }, [id, newType, langToUse, genre])
 
   // INFINITE SCROLL
 

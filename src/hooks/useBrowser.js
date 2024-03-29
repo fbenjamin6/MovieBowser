@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'wouter'
 
-export function useBrowser () {
-  const [value, setValue] = useState('')
+export function useBrowser ({ value }) {
   const [location, setLocation] = useLocation()
   const [isVisible, setIsVisible] = useState(false)
   const timeoutRef = useRef(0)
@@ -13,7 +12,7 @@ export function useBrowser () {
 
     timeoutRef.current = setTimeout(() => {
       setIsVisible(true)
-    }, 700)
+    }, 1000)
 
     return () => {
       clearTimeout(timeoutRef.current)
@@ -27,5 +26,5 @@ export function useBrowser () {
     setLocation(searchQuery)
   }
 
-  return { value, setValue, handleSubmit, isVisible, setIsVisible }
+  return { handleSubmit, isVisible, setIsVisible }
 }
