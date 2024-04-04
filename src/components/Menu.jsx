@@ -4,13 +4,15 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 import { NavigationDropdown } from './NavigationDropdown'
 import { useGenres } from '../hooks/useGenres'
 import { Link } from 'wouter'
+import { useLanguageContext } from '../hooks/useLanguageContext'
 
 export function Menu () {
   const { genres } = useGenres()
+  const { language } = useLanguageContext()
   return (
     <div className='flex items-center gap-3 justify-between w-full ' >
-          <div className='pl-32 h-full flex gap-8'>
-            <NavigationDropdown title={'Genres'} >
+          <div className='pl-32 h-full flex gap-10'>
+            <NavigationDropdown title={language === 'EN' ? 'Genres' : 'Géneros'} >
               {genres.map(genre => {
                 return (
                 <li key={genre.id} >
@@ -21,27 +23,28 @@ export function Menu () {
                 )
               })}
             </NavigationDropdown>
-            <NavigationDropdown title={'Movies'}>
+            <NavigationDropdown title={language === 'EN' ? 'Movies' : 'Películas'}>
               <li>
                 <Link href={'/list/movies/popular'}>
-                  <a className='hover:text-cyan-500' >Most Popular Movies</a>
+                  <a className='hover:text-cyan-500' >{language === 'EN' ? 'Most Popular ' : 'Más populares'}</a>
                 </Link>
               </li>
               <li>
                 <Link href={'/list/movies/top_rated'}>
-                  <a className='hover:text-cyan-500' >Top Rated Movies</a>
+                  <a className='hover:text-cyan-500' >{language === 'EN' ? 'Top Rated' : 'Mejor valoradas'}</a>
                 </Link>
               </li>
               <li>
                 <Link href={'/list/movies/trending'}>
-                  <a className='hover:text-cyan-500' >Trending Movies</a>
+                  <a className='hover:text-cyan-500' >{language === 'EN' ? 'Trending ' : 'Tendencias'}</a>
                 </Link>
               </li>
             </NavigationDropdown>
           </div>
+
           <div className='flex gap-3 items-center' >
-          <Browser/>
-          <LanguageSwitcher/>
+            <Browser/>
+            <LanguageSwitcher/>
           </div>
         </div>
   )

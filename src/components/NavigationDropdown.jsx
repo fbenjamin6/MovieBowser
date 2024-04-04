@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export function NavigationDropdown ({ children, title, ref }) {
+export function NavigationDropdown ({ children, title }) {
   const [isVisible, setIsVisible] = useState(false)
 
   function blurHandle () {

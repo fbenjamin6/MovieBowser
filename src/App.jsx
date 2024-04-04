@@ -4,7 +4,6 @@ import { HomePage } from './pages/HomePage'
 import { Route } from 'wouter'
 import { MovieListPage } from './pages/MovieListPage'
 import { MoviePage } from './pages/MoviePage'
-
 import { SearchPage } from './pages/SearchPage'
 
 function App () {

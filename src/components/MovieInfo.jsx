@@ -4,8 +4,8 @@ import { ButtonWatchTrailer } from '../components/ButtonWatchTrailer'
 import { useVideos } from '../hooks/useVideos'
 import { Link } from 'wouter'
 
-export function MovieInfo ({ movie, Acting, Writing, Directing }) {
-  const { id, title, overview, date, rate, voteCount, poster, bigPoster, duration, genres } = movie
+export function MovieInfo ({ movie, Acting, Writing, Directing, isEN }) {
+  const { id, title, overview, date, rate, voteCount, poster, duration, genres } = movie
   const { trailer } = useVideos({ type: 'trailer', id })
 
   return (
@@ -38,21 +38,21 @@ export function MovieInfo ({ movie, Acting, Writing, Directing }) {
               return (
                 <Link href={`/search/genre=${id}`} key={id}>
                   <a className='rounded-3xl font-semibold border-gray-100 border-solid border px-4 py-1 text-gray-100 bg-gray-950 bg-opacity-60 transition duration-300 hover:border-gray-300 hover:bg-gray-300 hover:text-black '>{name}</a>
-                </Link>
+               </Link>
               )
             })}
           </div>
-          <h4 className='text-gray-400 flex flex-wrap gap-3'>Directed by {Directing?.map((director, index) => {
+          <h4 className='text-gray-400 flex flex-wrap gap-3'>{isEN ? 'Directed by' : 'Dirección por'} {Directing?.map((director, index) => {
             if (Directing[index - 1] === director) return []
             return (<span className='text-white' key={index}> {director.name}</span>)
           })}</h4>
 
-          <h4 className='text-gray-400 flex flex-wrap gap-3'>Writers {Writing?.map((writer, index) => {
+          <h4 className='text-gray-400 flex flex-wrap gap-3'>{isEN ? 'Writers' : 'Guión'} {Writing?.map((writer, index) => {
             if (Writing[index - 1] === writer) return []
             return (<span className='text-white' key={index}> {writer.name}</span>)
           })}</h4>
 
-          <h4 className='text-gray-400 flex flex-wrap gap-3'>Stars {Acting?.map((star, index) => {
+          <h4 className='text-gray-400 flex flex-wrap gap-3'>{isEN ? 'Stars' : 'Actores'} {Acting?.map((star, index) => {
             if (Acting[index - 1] === star) return []
             if (index >= 3) return []
             return (<span className='text-white' key={index}> {star.name}</span>)

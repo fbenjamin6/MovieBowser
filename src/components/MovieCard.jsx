@@ -15,7 +15,7 @@ export function MovieCard ({ movie, lastMovieRef, newClasses, setWidth }) {
           <h3>{title}</h3>
           <div className='flex justify-between mt-1'>
             <span className='flex gap-2 items-center text-gray-400'> <StarRateIcon/> {rate ? rate.toFixed(1) : 0} / 10</span>
-            <span className='text-gray-400'>{date.slice(0, 4)}</span>
+            <span className='text-gray-400'>{date?.slice(0, 4)}</span>
           </div>
         </div>
       </a>
