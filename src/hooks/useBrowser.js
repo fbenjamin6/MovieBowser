@@ -1,8 +1,9 @@
+import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { useLocation } from 'wouter'
 
-export function useBrowser ({ value }) {
-  const [location, setLocation] = useLocation()
+export function useBrowser ({ value, lang }) {
+  const router = useRouter()
+  const { mediaType } = useParams()
   const [isVisible, setIsVisible] = useState(false)
   const timeoutRef = useRef(0)
 
@@ -22,8 +23,8 @@ export function useBrowser ({ value }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (value.length < 3) return
-    const searchQuery = `/search/q=${value}`
-    setLocation(searchQuery)
+    const searchQuery = `/${lang}/${mediaType || 'movie'}/search?query=${value}`
+    router.push(searchQuery)
   }
 
   return { handleSubmit, isVisible, setIsVisible }

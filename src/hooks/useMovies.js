@@ -1,34 +1,33 @@
+'use client'
 import { useCallback, useEffect, useState, useRef } from 'react'
-import { searchMovies } from '../services/searchMovies'
-import { useLanguageContext } from './useLanguageContext'
+import { searchMedia } from '../services/searchMedia'
 
-export function useMovies ({ type, quantity, id, query, genre }) {
+export function useMovies ({ searchType, mediaType, quantity, id, query, genre, lang }) {
   const [movies, setMovies] = useState()
-  const [newType, setNewType] = useState(type)
+  const [newType, setNewType] = useState(searchType)
   const timeoutRef = useRef(0)
   const [totalPages, setTotalPages] = useState(1)
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const observer = useRef()
-  const { langToUse } = useLanguageContext()
 
   useEffect(() => {
-    setNewType(type)
+    setNewType(searchType)
     setPage(1)
     setLoading(true)
-  }, [type])
+  }, [searchType])
 
   const getMovies = useCallback(async () => {
     if (query?.length < 3) return
     setLoading(true)
-    const { movies: newMovies, totalPages: newTotalPages } = await searchMovies({ type: newType, id, query, genre, page, lang: langToUse })
+    const { media: newMovies, totalPages: newTotalPages } = await searchMedia({ searchType: newType, mediaType, id, query, genre, page, lang })
     if (quantity !== undefined) {
       const newMoviesSliced = newMovies?.slice(0, quantity)
       return newMoviesSliced
     }
     setTotalPages(newTotalPages)
     return newMovies
-  }, [{ type }])
+  }, [{ searchType }])
 
   const settingMovies = async () => {
     const newMovies = await getMovies()
@@ -37,9 +36,9 @@ export function useMovies ({ type, quantity, id, query, genre }) {
   }
 
   useEffect(() => {
-    if (!type) return
-    if (type === 'byName' && query.length < 3) return
-    if (type === 'byName' && query.length >= 3) {
+    if (!searchType) return
+    if (searchType === 'byName' && query.length < 3) return
+    if (searchType === 'byName' && query.length >= 3) {
       timeoutRef.current = setTimeout(() => {
         console.log('tiemout')
         settingMovies()
@@ -53,9 +52,9 @@ export function useMovies ({ type, quantity, id, query, genre }) {
   }, [query])
 
   useEffect(() => {
-    if (!type) return
+    if (!searchType) return
     settingMovies()
-  }, [id, newType, langToUse, genre])
+  }, [id, newType, lang, genre])
 
   // INFINITE SCROLL
 

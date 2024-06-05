@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// import chevronRight from './public/ui/chevronRight.png'
 export default {
   content: [
     './src/**/*.{js,jsx}'
@@ -6,8 +7,8 @@ export default {
   theme: {
     extend: {
       content: {
-        chevronRight: 'url("./assets/chevronRight.png")',
-        playVideoIcon: 'url(./assets/videoHoverPlay.png)'
+        chevronRight: 'url(/ui/chevronRight.png)',
+        playVideoIcon: 'url(/ui/videoHoverPlay.png)'
       },
       animation: {
         newPulse: 'newPulse 1s linear infinite'
@@ -16,6 +17,11 @@ export default {
         newPulse: {
           '0%': { opacity: 1 },
           '100%': { opacity: 0 }
+        },
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)'
+          }
         }
       }
     }

@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useRef, useState } from 'react'
 
 export function useCarousel ({ type }) {
@@ -33,6 +34,7 @@ export function useCarousel ({ type }) {
   }
 
   function handleScrollNeeded () {
+    if (!carouselRef.current) return
     const carousel = carouselRef.current
     const itemWidth = carousel.firstElementChild?.clientWidth || 0
 

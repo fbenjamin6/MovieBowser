@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "genres": "Géneros",
+    "movies":"Películas",
+    "tv":"Series",
+    "favorites": "Mis Favoritos",
+    "topRated": "Mejor valoradas",
+    "mostPopular": "Más populares",
+    "trending": "Tendencias"
+  },
+  "home":{
+    "topRated": "Películas mejor valoradas",
+    "mostPopular": "Películas más populares"
+  },
+  "list":{
+    "topRated": "Mejor valoradas",
+    "mostPopular": "Más populares",
+    "trending": "Tendencias"
+  },
+  "mediaPage": {
+    "recommendation": "Recomendaciones",
+    "directing": "Dirección por",
+    "writters": "Guión",
+    "stars": "Actores",
+    "cast": "Elenco"
+  }
+}

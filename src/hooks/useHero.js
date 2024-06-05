@@ -1,3 +1,4 @@
+'use client'
 import { useRef, useEffect, useContext, useState } from 'react'
 import { MovieIndexContext } from '../context/movieIndexContext'
 

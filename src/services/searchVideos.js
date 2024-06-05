@@ -6,7 +6,10 @@ const options = {
   }
 }
 
-export function searchVideos ({ id, lang }) {
-  return fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=${lang}`, options)
+export function searchVideos ({ id, lang, mediaType }) {
+  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=${lang}`, options)
     .then(response => response.json())
+    .then(({ results }) => {
+      return { videos: results }
+    })
 }
