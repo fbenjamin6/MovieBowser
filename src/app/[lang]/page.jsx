@@ -11,9 +11,7 @@ export default async function HomePage ({ params }) {
 
   return (
     <>
-      <Suspense fallback={<></>}>
-        <VideoModal/>
-      </Suspense>
+      <VideoModal/>
       <Suspense fallback={<HeroSkeleton/>}>
         <Hero lang={lang}/>
       </Suspense>
