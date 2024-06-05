@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { CloseIcon, HamburgerIcon, LoupeIcon, StarMenuIcon, GenreMenuIcon, MovieMenuIcon, TVMenuIcon } from './Icons'
+import { CloseIcon, HamburgerIcon, LoupeIcon, GenreMenuIcon, MovieMenuIcon, TVMenuIcon } from './Icons'
 import Link from 'next/link'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { useBrowser } from '../../hooks/useBrowser'

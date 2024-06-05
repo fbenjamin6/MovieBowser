@@ -18,5 +18,3 @@ export function HeroMovie ({ bigPoster, title, overview, id, rate }) {
       </div>
   )
 }
-
-{ /* <article style={{ backgroundImage: `url('https://image.tmdb.org/t/p/original${bigPoster}')` }} className={'relative bg-cover bg-no-repeat  bg-top w-[1600px] h-full z-10 flex items-center px-12'}></article> */ }

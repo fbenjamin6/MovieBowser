@@ -17,7 +17,7 @@ export default async function SearchPage ({ params, searchParams }) {
     <>
       <section className='pt-32 px-16 gap-8 flex items-center'>
         {query && <SearchPageBrowser mediaType={mediaType}/>}
-        {genre && <h2 className='text-2xl'>{lang === 'en' ? 'Search for genre ' : 'Buscaste por el género '} <span className='font-semibold'>"{genreName}"</span></h2>}
+        {genre && <h2 className='text-2xl'>{lang === 'en' ? 'Search for genre ' : 'Buscaste por el género '} <span className='font-semibold'>{genreName}</span></h2>}
         <MediaTypeSwitcher/>
       </section>
       <Suspense key={[query, genre]} fallback={<SearchMediaSkeleton/>}>
