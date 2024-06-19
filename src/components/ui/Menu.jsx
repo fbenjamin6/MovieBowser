@@ -44,7 +44,7 @@ export async function Menu ({ lang }) {
       <div className='items-center gap-3 justify-between w-full hidden lg:flex' >
         <div className='xl:pl-16 h-full flex gap-10'>
           <NavigationDropdown title={menu.genres} >
-            {genres.map(genre => {
+            {genres?.map(genre => {
               return (
               <li key={genre.id} >
                 <Link href={`/${lang}/${'movie'}/search?genre=${genre.id}`} className='hover:text-cyan-500'>

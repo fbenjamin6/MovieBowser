@@ -35,7 +35,7 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList }) {
           <Accordion isEnabled={accordion === 'genres'}
           title={<span className='flex items-center gap-2'><GenreMenuIcon isEnabled={accordion === 'genres'}/>{menu.genres}</span>}
           handleAccordion={() => handleAccordion('genres')} >
-            {genres.map(genre => {
+            {genres?.map(genre => {
               return (
                 <li key={genre.id} >
                   <Link href={`/${lang}/${'movie'}/search?genre=${genre.id}`} className='hover:text-cyan-500'
