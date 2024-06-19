@@ -37,8 +37,8 @@ export function useMovies ({ searchType, mediaType, quantity, id, query, genre, 
 
   useEffect(() => {
     if (!searchType) return
-    if (searchType === 'byName' && query.length < 3) return
-    if (searchType === 'byName' && query.length >= 3) {
+    if (searchType === 'byName' && query?.length < 3) return
+    if (searchType === 'byName' && query?.length >= 3) {
       timeoutRef.current = setTimeout(() => {
         console.log('tiemout')
         settingMovies()

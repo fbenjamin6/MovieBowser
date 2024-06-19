@@ -19,7 +19,7 @@ export function Browser () {
         <input type="text" value={value}
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => {
-          value.length > 3 ? setIsVisible(true) : setIsVisible(false)
+          value?.length > 3 ? setIsVisible(true) : setIsVisible(false)
           setIsFocus(true)
         }}
         onBlur={(e) => {

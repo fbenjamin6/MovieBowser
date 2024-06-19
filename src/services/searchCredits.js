@@ -18,18 +18,18 @@ export async function searchCredits ({ id, lang, mediaType }) {
         Directing: []
       }
       movieCredits.cast.forEach((person) => {
-        if (newCredits.Acting.length >= 12) return
+        if (newCredits.Acting?.length >= 12) return
         newCredits[person.known_for_department]?.push(person)
       })
       movieCredits.crew.forEach(person => {
         if (person.department !== 'Writing') return
-        if (newCredits.Writing.length >= 3) return
+        if (newCredits.Writing?.length >= 3) return
         if (isAlreadyIncluded(newCredits.Writing, person.name) === true) return
         newCredits[person.department]?.push(person)
       })
       movieCredits.crew.forEach(person => {
         if (person.department !== 'Directing' || person.job !== 'Director') return
-        if (newCredits.Directing.length >= 3) return
+        if (newCredits.Directing?.length >= 3) return
         if (isAlreadyIncluded(newCredits.Directing, person.name) === true) return
         newCredits[person.department]?.push(person)
       })
