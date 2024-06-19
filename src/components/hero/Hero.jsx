@@ -13,7 +13,7 @@ export async function Hero ({ lang }) {
 
   return (
     <MovieIndexProvider>
-      <section id="hero" className="overflow-hidden relative max-w-full h-[800px]">
+      <section id="hero" className="overflow-hidden relative max-w-full h-[600px] md:h-[800px]">
         {media && <HeroSlider movies={media}></HeroSlider>}
       </section>
     </MovieIndexProvider>

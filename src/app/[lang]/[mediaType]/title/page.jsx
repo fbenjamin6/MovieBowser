@@ -5,11 +5,23 @@ import { CarouselWrapper } from '../../../../components/carousel/CarouselWrapper
 import { MediaInfoSkeleton, MediaTopCastSkeleton } from '../../../../components/Skeletons'
 import { VideoModal } from '../../../../components/ui/VideoModal'
 import { getDictionary } from '../../../../dictionaries/dictionary'
+import { API_OPTIONS } from '../../../../utils/constants.js'
 
 export const dynamicParams = false
 
 export async function generateStaticParams () {
   return [{ mediaType: 'movie' }, { mediaType: 'tv' }]
+}
+
+export async function generateMetadata ({ params, searchParams }) {
+  const { lang, mediaType } = params
+  const { id } = searchParams
+  const title = await fetch(`https://api.themoviedb.org/3/${mediaType}/${id}?language=${lang}`, API_OPTIONS)
+    .then(response => response.json())
+    .then(data => data.title || data.original_name)
+  return {
+    title: `${title}`
+  }
 }
 
 export default async function MediaPage ({ params, searchParams }) {
@@ -28,8 +40,8 @@ export default async function MediaPage ({ params, searchParams }) {
         Videos
       </CarouselWrapper>
 
-      <section className=' px-16 mb-28 mt-20'>
-        <h2 className='text-2xl mb-6'>{mediaPage.cast}</h2>
+      <section className='px-4 md:px-16 mb-12 md:mb-28 mt-8 md:mt-20'>
+        <h2 className='text-2xl mb-2 md:mb-6'>{mediaPage.cast}</h2>
         <Suspense fallback={<MediaTopCastSkeleton/>}>
           <MediaTopCast id={id} lang={lang} mediaType={mediaType}/>
         </Suspense>

@@ -11,17 +11,19 @@ export default async function HomePage ({ params }) {
 
   return (
     <>
-      <VideoModal/>
+      <Suspense fallback={<></>}>
+        <VideoModal/>
+      </Suspense>
       <Suspense fallback={<HeroSkeleton/>}>
         <Hero lang={lang}/>
       </Suspense>
 
       <CarouselWrapper areMovies={true} searchType={'popular'} mediaType={'movie'} href={`${lang}/movie/list?type=popular`} lang={lang}>
-        {home.mostPopular}
+        {home.popular}
       </CarouselWrapper>
 
       <CarouselWrapper areMovies={true} searchType={'top_rated'} mediaType={'movie'} href={`${lang}/movie/list?type=top_rated`} lang={lang}>
-        {home.topRated}
+        {home.top_rated}
       </CarouselWrapper>
     </>
   )

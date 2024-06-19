@@ -17,7 +17,7 @@ exports.modules = {
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Genres","movies":"Movies","tv":"TV Shows","favorites":"My Favorites","topRated":"Top Rated","mostPopular":"Most Popular","trending":"Trending"},"home":{"topRated":"Top Rated Movies","mostPopular":"Most Popular Movies"},"list":{"topRated":"Top Rated","mostPopular":"Most Popular","trending":"Trending"},"mediaPage":{"recommendation":"Recommendations","directing":"Directed by","writters":"Writers","stars":"Stars","cast":"Cast"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Genres","movies":"Movies","tv":"TV Shows","favorites":"My Favorites","top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"home":{"top_rated":"Top Rated Movies","popular":"Most Popular Movies"},"list":{"top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"mediaPage":{"recommendation":"Recommendations","directing":"Directed by","writters":"Writers","stars":"Stars","cast":"Cast"}}');
 
 /***/ })
 

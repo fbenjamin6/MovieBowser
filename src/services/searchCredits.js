@@ -1,10 +1,4 @@
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmQxZGQyMzI1YzZkODRjMjE3Y2NiODUzN2EyYmIxZiIsInN1YiI6IjY1NTAwYmEyMDgxNmM3MDExYTA4ZDkxZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GOcHFICcoZsytRdLtODSOcvXCRUNqekaB4Q7OSbNuqk'
-  }
-}
+import { API_OPTIONS } from '../utils/constants'
 
 export async function searchCredits ({ id, lang, mediaType }) {
   if (id === undefined) return
@@ -15,7 +9,7 @@ export async function searchCredits ({ id, lang, mediaType }) {
     })
     return included
   }
-  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=${lang}`, options)
+  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=${lang}`, API_OPTIONS)
     .then(response => response.json())
     .then(movieCredits => {
       const newCredits = {

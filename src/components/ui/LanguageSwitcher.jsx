@@ -27,7 +27,7 @@ export function LanguageSwitcher () {
   }
 
   return (
-    <div className='relative font-semibold' onPointerLeave={() => setIsVisible(false)}>
+    <div className='relative font-semibold w-min' onPointerLeave={() => setIsVisible(false)}>
       <button onClick={handleClick} className={`relative w-20 flex items-center gap-2  justify-center rounded border transition-colors duration-200 bg-slate-800/40 ${isVisible ? 'border-cyan-500' : 'border-slate-700'} text-white bg-opacity-90 py-0.5 z-50`}>{lang.toLocaleUpperCase()} {lang === 'en' ? <FlagENIcon/> : <FlagESIcon/>}</button>
       <div className={`absolute w-full bg-slate-800 bg-opacity-90 rounded-b transition-all duration-200 ${isVisible ? 'opacity-100 translate-y-0' : ' opacity-0 -translate-y-2 pointer-events-none'}`}>
         <ul>

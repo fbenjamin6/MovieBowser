@@ -5,6 +5,13 @@ import { Footer } from '../../components/ui/Footer'
 import { i18n } from '../../../i18n-config'
 import { DM_Sans as DMSans } from 'next/font/google'
 
+export const metadata = {
+  title: {
+    template: '%s | Movie Bowser',
+    default: 'Movie Bowser'
+  }
+}
+
 const DMSansFont = DMSans({ subsets: ['latin'], display: 'swap' })
 
 export async function generateStaticParams () {

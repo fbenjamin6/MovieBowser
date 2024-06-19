@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 
-export function StarRateIcon ({ classes, width }) {
-  const className = `w-[${width}px] inline ${classes}`
+export function StarRateIcon ({ classes }) {
+  const className = `inline ${classes}`
   return (
-    <Image src='/ui/star.png' width={26} height={26} alt='' className={className}/>
+    <Image src='/ui/star.png' width={22} height={22} alt='' className={className}/>
   )
 }
 
@@ -73,6 +73,14 @@ export function GenreMenuIcon ({ isEnabled }) {
 
 export function StarMenuIcon () {
   return (
-    <Image width={25} height={25} src='/ui/starMenu.png' alt=''/>
+    <Image className='inline-block grayscale group-active:grayscale-0 transition-all ' width={20} height={20} src='/ui/starMenu.png' alt=''/>
+  )
+}
+
+export function ChevronDownIcon ({ classes }) {
+  const className = `${classes} transition-all`
+
+  return (
+    <Image className={className} width={20} height={20} src='/ui/chevronRight.png' alt=''/>
   )
 }

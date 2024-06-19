@@ -20,7 +20,7 @@ export function ButtonWatchTrailer ({ classes, id }) {
     router.replace(`${pathname}?${newParams.toString()}`, { scroll: false })
   }
 
-  const className = `${classes} hover:scale-105 transition duration-300 flex items-center border border-cyan-600 bg-gray-950 text-white bg-opacity-60 px-4 py-1.5`
+  const className = `${classes} max-md:text-sm font-semibold hover:scale-105 transition duration-300 flex items-center border border-cyan-600 bg-gray-950 text-white bg-opacity-60 px-4 py-1.5`
 
   return (
     <>

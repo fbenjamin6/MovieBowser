@@ -1,11 +1,5 @@
 import { unstable_noStore as noStore } from 'next/cache'
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmQxZGQyMzI1YzZkODRjMjE3Y2NiODUzN2EyYmIxZiIsInN1YiI6IjY1NTAwYmEyMDgxNmM3MDExYTA4ZDkxZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GOcHFICcoZsytRdLtODSOcvXCRUNqekaB4Q7OSbNuqk'
-  }
-}
+import { API_OPTIONS } from '../utils/constants'
 
 export function searchMedia ({ searchType, mediaType, id, query, page, genre, lang, quantity }) {
   noStore()
@@ -20,7 +14,7 @@ export function searchMedia ({ searchType, mediaType, id, query, page, genre, la
   }
 
   if (searchType === 'byName' && query === undefined) return
-  return fetch(searchs[searchType], options)
+  return fetch(searchs[searchType], API_OPTIONS)
     .then(res => res.json())
     .then(res => {
       const totalPages = res.total_pages
@@ -31,6 +25,7 @@ export function searchMedia ({ searchType, mediaType, id, query, page, genre, la
         } else { return true }
       })
       const mappedMedia = filteredMedia?.map(media => {
+        console.log(media)
         return ({
           id: media.id,
           title: media.title || media.name,
@@ -41,7 +36,7 @@ export function searchMedia ({ searchType, mediaType, id, query, page, genre, la
           voteCount: media.vote_count,
           date: media.release_date,
           genres: media.genres,
-          duration: media.runtime
+          duration: media.runtime || { seasons: media.number_of_seasons, episodes: media.number_of_episodes }
         })
       })
 

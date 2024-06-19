@@ -17,7 +17,7 @@ exports.modules = {
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Géneros","movies":"Películas","tv":"Series","favorites":"Mis Favoritos","topRated":"Mejor valoradas","mostPopular":"Más populares","trending":"Tendencias"},"home":{"topRated":"Películas mejor valoradas","mostPopular":"Películas más populares"},"list":{"topRated":"Mejor valoradas","mostPopular":"Más populares","trending":"Tendencias"},"mediaPage":{"recommendation":"Recomendaciones","directing":"Dirección por","writters":"Guión","stars":"Actores","cast":"Elenco"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Géneros","movies":"Películas","tv":"Series","favorites":"Mis Favoritos","top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"home":{"top_rated":"Películas mejor valoradas","popular":"Películas más populares"},"list":{"top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"mediaPage":{"recommendation":"Recomendaciones","directing":"Dirección por","writters":"Guión","stars":"Actores","cast":"Elenco"}}');
 
 /***/ })
 

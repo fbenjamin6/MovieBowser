@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Browser } from './Browser'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { NavigationDropdown } from './NavigationDropdown'
@@ -9,16 +9,16 @@ import { MenuMobile } from './MenuMobile'
 
 export async function Menu ({ lang }) {
   const { menu } = await getDictionary(lang)
-  const genres = await searchGenres({ lang })
+  const genres = await searchGenres({ lang, mediaType: 'movie' })
 
   const moviesList = [
     {
       type: 'popular',
-      text: menu.mostPopular
+      text: menu.popular
     },
     {
       type: 'top_rated',
-      text: menu.topRated
+      text: menu.top_rated
     },
     {
       type: 'trending',
@@ -28,11 +28,11 @@ export async function Menu ({ lang }) {
   const tvList = [
     {
       type: 'popular',
-      text: menu.mostPopular
+      text: menu.popular
     },
     {
       type: 'top_rated',
-      text: menu.topRated
+      text: menu.top_rated
     },
     {
       type: 'trending',
@@ -83,11 +83,14 @@ export async function Menu ({ lang }) {
 
         <div className='flex gap-3 items-center' >
           <Browser/>
-          <LanguageSwitcher/>
+          <Suspense fallback={<></>}>
+            <LanguageSwitcher/>
+          </Suspense>
         </div>
       </div>
-
-      <MenuMobile menu={menu} genres={genres} lang={lang} movieList={moviesList} tvList={tvList}/>
+      <Suspense fallback={<></>}>
+        <MenuMobile menu={menu} genres={genres} lang={lang} movieList={moviesList} tvList={tvList}/>
+      </Suspense>
     </>
   )
 }

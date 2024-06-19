@@ -12,14 +12,14 @@ export function HeroSlider ({ movies }) {
   const mappedMovies = useMemo(() => {
     return movies.map(movie => {
       return (
-        <HeroMovie bigPoster={movie.bigPoster} title={movie.title} overview={movie.overview} id={movie.id} rate={movie.rate} key={movie.id}></HeroMovie>
+        <HeroMovie movie={movie} key={movie.id}></HeroMovie>
       )
     })
   }, [movies])
 
   return (
     <>
-      <ul className='max-[1600px]:right-16 right-[calc((100vw-1600px)/2+56px)] absolute z-10 top-2/4 -translate-y-1/2 flex flex-col gap-1 w-15 bg-gray-900 bg-opacity-80 rounded items-center px-2 py-2 w-[46px]'>
+      <ul className='max-[1600px]:right-16 right-[calc((100vw-1600px)/2+56px)] absolute z-10 top-2/4 -translate-y-1/2 hidden md:flex flex-col gap-1 w-15 bg-gray-900 bg-opacity-80 rounded items-center px-2 py-2 w-[46px]'>
         {movies.map((movie, index) => {
           return (
             <HeroSliderLi key={index} index={index} handleClick={handleClick}></HeroSliderLi>

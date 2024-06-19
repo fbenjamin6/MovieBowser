@@ -65,12 +65,12 @@ section {
 
 .GroupOfMovies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 }
 
 .MovieTopCast {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
 }
 
 
@@ -80,4 +80,23 @@ section {
 
 .mediaSwitcher:checked ~ div .mediaTV{
   color: #fff;
+}
+
+@media screen and (max-width:767px) {
+  .GroupOfMovies {
+    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  }
+  .MovieTopCast {
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  }
+ 
+}
+
+@media screen and (max-width:470px) {
+  .MovieTopCast {
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+  }
+  .GroupOfMovies {
+    grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+  }
 }

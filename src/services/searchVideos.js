@@ -1,13 +1,7 @@
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmQxZGQyMzI1YzZkODRjMjE3Y2NiODUzN2EyYmIxZiIsInN1YiI6IjY1NTAwYmEyMDgxNmM3MDExYTA4ZDkxZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GOcHFICcoZsytRdLtODSOcvXCRUNqekaB4Q7OSbNuqk'
-  }
-}
+import { API_OPTIONS } from '../utils/constants'
 
 export function searchVideos ({ id, lang, mediaType }) {
-  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=${lang}`, options)
+  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?language=${lang}`, API_OPTIONS)
     .then(response => response.json())
     .then(({ results }) => {
       return { videos: results }
