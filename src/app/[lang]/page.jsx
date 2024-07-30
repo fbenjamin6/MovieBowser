@@ -4,7 +4,6 @@ import { VideoModal } from '../../components/ui/VideoModal'
 import { HeroSkeleton } from '../../components/Skeletons'
 import { getDictionary } from '../../dictionaries/dictionary'
 import { CarouselWrapper } from '../../components/carousel/CarouselWrapper'
-import { getServerSession } from 'next-auth'
 
 export default async function HomePage ({ params }) {
   const { lang } = params
