@@ -16,7 +16,7 @@ export function Browser () {
   return (
     <div className='relative'>
       <form onSubmit={(e) => handleSubmit(e)} action="" className={`flex rounded-md border px-2.5 py-1.5 h-9 transition-all ease-out duration-200 group w-[36px] hover:w-[280px] focus-within:w-[280px] ${isFocus ? 'border-cyan-500' : 'border-transparent hover:border-white'}`}>
-        <input type="text" value={value}
+        <input type="text" aria-label='menuClickable' value={value}
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => {
           value?.length > 3 ? setIsVisible(true) : setIsVisible(false)

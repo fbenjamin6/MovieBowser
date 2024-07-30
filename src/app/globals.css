@@ -37,66 +37,80 @@ section {
   width: 60%;
 }
 
-.movieList-link-popular.active ~ .movieList-link-border {
+.movieList-link-popular.active~.movieList-link-border {
   opacity: 1;
   transform: translateX(52px);
 }
-.movieList-link-rated.active ~ .movieList-link-border {
+
+.movieList-link-rated.active~.movieList-link-border {
   opacity: 1;
   transform: translateX(212px);
 }
-.movieList-link-trending.active ~ .movieList-link-border {
+
+.movieList-link-trending.active~.movieList-link-border {
   opacity: 1;
   transform: translateX(347px);
 }
 
-.movieList-link-popular:hover ~ .movieList-link-border {
+.movieList-link-popular:hover~.movieList-link-border {
   opacity: 1;
   transform: translateX(52px);
 }
-.movieList-link-rated:hover ~ .movieList-link-border {
+
+.movieList-link-rated:hover~.movieList-link-border {
   opacity: 1;
   transform: translateX(212px);
 }
-.movieList-link-trending:hover ~ .movieList-link-border {
+
+.movieList-link-trending:hover~.movieList-link-border {
   opacity: 1;
   transform: translateX(347px);
 }
 
 .GroupOfMovies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .MovieTopCast {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 
-.mediaSwitcher:checked ~ div .mediaMovie{
+.mediaSwitcher:checked~div .mediaMovie {
   color: #9ca3af;
 }
 
-.mediaSwitcher:checked ~ div .mediaTV{
+.mediaSwitcher:checked~div .mediaTV {
   color: #fff;
 }
 
 @media screen and (max-width:767px) {
   .GroupOfMovies {
-    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
+
   .MovieTopCast {
-    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
- 
+
 }
 
 @media screen and (max-width:470px) {
   .MovieTopCast {
-    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
+
   .GroupOfMovies {
-    grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
+}
+
+.venom {
+  mask-image: linear-gradient(to left, #030712 17%, transparent);
+}
+
+.spiderman {
+  mask-image: linear-gradient(to right, #030712 17%, transparent);
 }

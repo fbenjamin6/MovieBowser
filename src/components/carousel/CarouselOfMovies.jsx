@@ -12,7 +12,8 @@ export function CarouselOfMovies ({ movies, mediaType }) {
       <div className='w-full relative group '>
         <CarouselArrow direction={'prev'} isFirst={isFirst} handleSlide={handleSlide}/>
         <CarouselArrow direction={'next'} isScrollNeeded={true} handleSlide={handleSlide}/>
-        <div className='w-full overflow-x-scroll scroll-smooth snap-x snap-mandatory gap-[0.7rem] flex justify-between transition-transform duration-500' style={{ scrollbarWidth: 'none' }} ref={carouselRef}>
+        <div className='w-full overflow-x-scroll scroll-smooth snap-x snap-mandatory gap-[0.7rem] flex justify-between transition-transform duration-500' style={{ scrollbarWidth: 'none' }}
+        ref={carouselRef}>
           { movies?.map(movie => {
             return (
               <MediaCard mediaType={mediaType} key={movie.id} media={movie}

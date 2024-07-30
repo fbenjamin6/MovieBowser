@@ -77,10 +77,16 @@ export function StarMenuIcon () {
   )
 }
 
-export function ChevronDownIcon ({ classes }) {
-  const className = `${classes} transition-all`
+export function ChevronDownIcon ({ isEnabled }) {
+  const className = `${isEnabled ? 'rotate-90 ' : '-rotate-90 grayscale'}  transition-all`
 
   return (
     <Image className={className} width={20} height={20} src='/ui/chevronRight.png' alt=''/>
+  )
+}
+
+export function LogOutIcon () {
+  return (
+    <Image className='' width={20} height={20} src='/ui/logOut.png' alt=''/>
   )
 }

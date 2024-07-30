@@ -22,9 +22,9 @@ export default async function RootLayout ({ children, params }) {
   const { lang } = params
   return (
     <html lang={lang} className={`${DMSansFont.className} antialiased`}>
-      <body>
+      <body className='grid min-h-[90vh] grid-rows-[100%_min-content] '>
         <Header lang={lang}/>
-        <main className='relative'>{children}</main>
+        <main className='relative overflow-hidden'>{children}</main>
         <Footer/>
       </body>
     </html>

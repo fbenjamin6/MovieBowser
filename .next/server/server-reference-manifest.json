@@ -1,5 +1,32 @@
 {
-  "node": {},
+  "node": {
+    "3d7102e01a431adac68e4fac1eeda03548a98f2d": {
+      "workers": {
+        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/[mediaType]/title/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/[lang]/page": "rsc",
+        "app/[lang]/[mediaType]/title/page": "rsc"
+      }
+    },
+    "383d537b93cafe463fcc23155461453f3d6fc340": {
+      "workers": {
+        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/[mediaType]/title/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/auth/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%5D&__client_imported__=true!",
+        "app/[lang]/[mediaType]/search/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/[mediaType]/list/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/[lang]/page": "rsc",
+        "app/[lang]/[mediaType]/title/page": "rsc",
+        "app/[lang]/auth/page": "action-browser",
+        "app/[lang]/[mediaType]/search/page": "rsc",
+        "app/[lang]/[mediaType]/list/page": "rsc"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "oGkOgjwKds9q1/0UqwR6qqK8j5rGxgKdAqxqYBuRkOo="
+  "encryptionKey": "m6zoUqKsvZFOcGnJvcjBDIpJS9ZCLkuJ1sJ0WHnrFaU="
 }

@@ -30,7 +30,7 @@ export function useCarousel ({ type }) {
     if (screenWidth > 1280) return setItemsToShow(type === 'movie' ? 6 : 3)
     if (screenWidth > 1024) return setItemsToShow(type === 'movie' ? 5 : 3)
     if (screenWidth > 768) return setItemsToShow(type === 'movie' ? 3 : 2)
-    if (screenWidth > 640) return setItemsToShow(type === 'movie' ? 2 : 1)
+    else return setItemsToShow(type === 'movie' ? 2 : 1)
   }
 
   function handleScrollNeeded () {
@@ -44,6 +44,7 @@ export function useCarousel ({ type }) {
 
   function handleSlide (direction) {
     const carousel = carouselRef.current
+    console.log(carousel.scrollLeft, carousel.offsetWidth, carousel.scrollWidth)
     const isAtTheEnd = carousel.scrollLeft + carousel.offsetWidth === carousel.scrollWidth
     const itemWidth = carousel.firstElementChild?.clientWidth || 0
 

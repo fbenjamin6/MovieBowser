@@ -1,7 +1,8 @@
+'use server'
 import { unstable_noStore as noStore } from 'next/cache'
 import { API_OPTIONS } from '../utils/constants'
 
-export function searchMedia ({ searchType, mediaType, id, query, page, genre, lang, quantity }) {
+export async function searchMedia ({ searchType, mediaType, id, query, page, genre, lang, quantity }) {
   noStore()
   const searchs = {
     trending: `https://api.themoviedb.org/3/trending/${mediaType}/week?language=${lang}&page=${page}`,
@@ -25,7 +26,6 @@ export function searchMedia ({ searchType, mediaType, id, query, page, genre, la
         } else { return true }
       })
       const mappedMedia = filteredMedia?.map(media => {
-        console.log(media)
         return ({
           id: media.id,
           title: media.title || media.name,

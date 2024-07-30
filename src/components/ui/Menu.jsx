@@ -6,10 +6,14 @@ import Link from 'next/link'
 import { getDictionary } from '../../dictionaries/dictionary'
 import { searchGenres } from '../../services/searchGenres'
 import { MenuMobile } from './MenuMobile'
+import { LoginButton } from '../auth/LoginButton'
+import { getServerSession } from 'next-auth'
+import { LoginSession } from './LoginSession'
 
 export async function Menu ({ lang }) {
   const { menu } = await getDictionary(lang)
   const genres = await searchGenres({ lang, mediaType: 'movie' })
+  const session = await getServerSession()
 
   const moviesList = [
     {
@@ -78,7 +82,7 @@ export async function Menu ({ lang }) {
             })}
           </NavigationDropdown>
 
-          <Link href={'/'} className='text-lg'>{menu.favorites}</Link>
+          {/* <Link href={'/'} className='text-lg'>{menu.favorites}</Link> */}
         </div>
 
         <div className='flex gap-3 items-center' >
@@ -86,10 +90,15 @@ export async function Menu ({ lang }) {
           <Suspense fallback={<></>}>
             <LanguageSwitcher/>
           </Suspense>
+          {session
+            ? <LoginSession session={session}/>
+            : <LoginButton lang={lang}/>
+          }
+
         </div>
       </div>
       <Suspense fallback={<></>}>
-        <MenuMobile menu={menu} genres={genres} lang={lang} movieList={moviesList} tvList={tvList}/>
+        <MenuMobile menu={menu} genres={genres} lang={lang} movieList={moviesList} tvList={tvList} session={session}/>
       </Suspense>
     </>
   )

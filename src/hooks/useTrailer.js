@@ -14,7 +14,7 @@ export function useTrailer ({ id }) {
     const { videos } = await searchVideos({ id, lang, mediaType: mediaType || 'movie' })
     setVideos(videos)
   }
-  console.log()
+
   useEffect(() => {
     getVideos()
   }, [id, lang])
