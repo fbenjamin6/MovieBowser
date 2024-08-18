@@ -1,5 +1,5 @@
 import React from 'react'
-import { searchCredits } from '../../services/searchCredits'
+import { searchCredits } from '@/lib/services/searchCredits'
 
 export async function MediaTopCast ({ id, lang, mediaType }) {
   const { Acting } = await searchCredits({ id, lang, mediaType })

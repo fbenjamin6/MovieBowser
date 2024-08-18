@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { SearchMediaResult } from '../../../../components/media/SearchMediaResult'
 import { SearchMediaSkeleton } from '../../../../components/Skeletons'
-import { searchGenres } from '../../../../services/searchGenres'
+import { searchGenres } from '@/lib/services/searchGenres'
 import { MediaTypeSwitcher } from '../../../../components/ui/MediaTypeSwitcher'
 import { SearchPageBrowser } from '../../../../components/ui/SearchBrowser'
 

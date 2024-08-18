@@ -1,10 +1,13 @@
 import { GithubButton } from '@/components/auth/GithubButton'
 import { GoogleButton } from '@/components/auth/GoogleButton'
+import { LogOutButton } from '@/components/auth/LogoutButton'
+import { getUserSession } from '@/lib/db/getUserSession'
 import Image from 'next/image'
 import React from 'react'
 
-export default function LoginPage ({ params }) {
+export default async function LoginPage ({ params }) {
   const { lang } = params
+  const { isLoggedIn } = await getUserSession()
 
   return (
     <>
@@ -15,11 +18,19 @@ export default function LoginPage ({ params }) {
           <Image src={'/ui/venomLogin.svg'} alt='' width={700} height={1280} className=' '/>
         </div>
           <div className='flex flex-col items-center h-max gap-2 rounded-lg bg-cyan-950/30 backdrop-blur p-10'>
+          {
+            isLoggedIn
+              ? <LogOutButton/>
+              : (
+              <>
+                <h2>{lang === 'en' ? 'Log in' : 'Iniciar sesion'} </h2>
+                <GoogleButton>Log in with Google</GoogleButton>
+                <p >Or</p>
+                <GithubButton>Log in with GitHub</GithubButton>
+              </>
+                )
+          }
 
-          <h2>{lang === 'en' ? 'Log in' : 'Iniciar sesion'} </h2>
-          <GoogleButton>Log in with Google</GoogleButton>
-          <p >Or</p>
-          <GithubButton>Log in with GitHub</GithubButton>
         </div>
       </section>
     </>

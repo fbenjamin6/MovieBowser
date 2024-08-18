@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeroSlider } from './HeroSlider'
-import { searchMedia } from '../../services/searchMedia'
+import { searchMedia } from '@/lib/services/searchMedia'
 import { MovieIndexProvider } from '../../context/movieIndexContext'
 
 export async function Hero ({ lang }) {

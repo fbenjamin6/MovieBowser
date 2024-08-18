@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { PlayIcon } from './Icons'
-import { useLang } from '../../hooks/useLang'
-import { useTrailer } from '../../hooks/useTrailer'
+import { useLang } from '../../lib/hooks/useLang'
+import { useTrailer } from '../../lib/hooks/useTrailer'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export function ButtonWatchTrailer ({ classes, id }) {

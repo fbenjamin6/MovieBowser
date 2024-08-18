@@ -3,8 +3,8 @@ import React from 'react'
 import { FlagENIcon, FlagESIcon } from './Icons'
 import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { useLang } from '../../hooks/useLang'
-import { useDropdown } from '@/hooks/useDropdown'
+import { useLang } from '../../lib/hooks/useLang'
+import { useDropdown } from '@/lib/hooks/useDropdown'
 
 export function LanguageSwitcher () {
   const lang = useLang()

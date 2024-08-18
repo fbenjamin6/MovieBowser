@@ -1,5 +1,5 @@
 'use client'
-import { useDropdown } from '@/hooks/useDropdown'
+import { useDropdown } from '@/lib/hooks/useDropdown'
 import React from 'react'
 
 export function NavigationDropdown ({ children, title }) {

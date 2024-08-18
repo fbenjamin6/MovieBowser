@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import { LoupeIcon } from './Icons'
-import { useBrowser } from '../../hooks/useBrowser'
+import { useBrowser } from '../../lib/hooks/useBrowser'
 import Link from 'next/link'
-import { useMovies } from '../../hooks/useMovies'
-import { useLang } from '../../hooks/useLang'
+import { useMovies } from '../../lib/hooks/useMovies'
+import { useLang } from '../../lib/hooks/useLang'
 
 export function Browser () {
   const lang = useLang()
@@ -37,7 +37,7 @@ export function Browser () {
           return (
             <li key={index} className='hover:bg-gray-950/70 backdrop-blur' onClick={() => setIsVisible(false)}>
               <Link href={`/movie/${movie.id}`} className='browserItem flex gap-3 items-center p-3'>
-                <img src={`https://image.tmdb.org/t/p/original/${movie.poster}`} alt="" className='w-[50px]'/>
+                <img src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="" className='w-[50px]'/>
                 <div>
                   <h4 className='font-semibold'>{movie.title}</h4>
                   <span className='text-gray-400'>{movie.date?.slice(0, 4)}</span>

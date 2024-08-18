@@ -2,7 +2,7 @@
 import React from 'react'
 import { MediaCard } from './MediaCard'
 import { Loader } from '../ui/Loader'
-import { useInfinityScroll } from '../../hooks/useInfinityScroll'
+import { useInfinityScroll } from '../../lib/hooks/useInfinityScroll'
 
 export function MediaInfinityScroll ({ totalPages, searchType, mediaType, lang, query }) {
   const { media, loaderRef, page } = useInfinityScroll({ searchType, mediaType, query, lang, page: 2, totalPages })

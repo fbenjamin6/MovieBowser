@@ -4,8 +4,8 @@ import { MediaTopCast } from '../../../../components/media/MediaTopCast'
 import { CarouselWrapper } from '../../../../components/carousel/CarouselWrapper'
 import { MediaInfoSkeleton, MediaTopCastSkeleton } from '../../../../components/Skeletons'
 import { VideoModal } from '../../../../components/ui/VideoModal'
-import { getDictionary } from '../../../../dictionaries/dictionary'
-import { API_OPTIONS } from '../../../../utils/constants.js'
+import { getDictionary } from '../../../../lib/dictionaries/dictionary'
+import { API_OPTIONS } from '../../../../lib/utils/constants.js'
 
 export const dynamicParams = false
 

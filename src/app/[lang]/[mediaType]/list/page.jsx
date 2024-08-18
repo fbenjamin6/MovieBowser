@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { SearchMediaSkeleton } from '../../../../components/Skeletons'
 import { SearchMediaResult } from '../../../../components/media/SearchMediaResult'
 import { MediaTypeSwitcher } from '../../../../components/ui/MediaTypeSwitcher'
-import { getDictionary } from '../../../../dictionaries/dictionary'
+import { getDictionary } from '../../../../lib/dictionaries/dictionary'
 import { ListSelector } from '../../../../components/ui/ListSelector'
 
 export async function generateMetadata ({ params, searchParams }) {

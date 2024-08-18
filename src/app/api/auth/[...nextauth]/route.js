@@ -1,6 +1,8 @@
 import nextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
+import { signIn } from 'next-auth/react'
+import prisma from '@/lib/db/db'
 
 const handler = nextAuth.default({
   providers: [
@@ -14,7 +16,30 @@ const handler = nextAuth.default({
     })
   ],
   callbacks: {
+    async signIn ({ user, account }) {
+      const { id, name, email } = user
+      const { provider } = account
 
+      const userFind = await prisma.user.findFirst({
+        where: {
+          email,
+          name,
+          provider
+        }
+      })
+
+      if (userFind) return true
+
+      await prisma.user.create({
+        data: {
+          email,
+          name,
+          provider
+        }
+      })
+
+      return true
+    }
   }
 })
 

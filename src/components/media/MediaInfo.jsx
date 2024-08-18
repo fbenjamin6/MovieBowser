@@ -2,19 +2,25 @@ import React from 'react'
 import { StarRateIcon } from '../ui/Icons'
 import { ButtonWatchTrailer } from '../ui/ButtonWatchTrailer'
 import Link from 'next/link'
-import { searchMedia } from '../../services/searchMedia'
-import { searchCredits } from '../../services/searchCredits'
+import { searchMedia } from '@/lib/services/searchMedia'
+import { searchCredits } from '@/lib/services/searchCredits'
+import { BigFavoriteButton } from '../ui/BigFavoriteButton'
+import { getUserSession } from '@/lib/db/getUserSession'
+import { isAlreadyFavorite } from '@/lib/db/isAlreadyFavorite'
 
 export async function MediaInfo ({ id, lang, mediaType, dict }) {
   const { media } = await searchMedia({ searchType: 'byId', mediaType, id, lang })
   const { Acting, Writing, Directing } = await searchCredits({ id, lang, mediaType })
   const { title, overview, date, rate, voteCount, poster, duration, genres } = media[0]
+  const { session } = await getUserSession()
+  const initialIsFavorite = await isAlreadyFavorite({ id, currentMediaType: mediaType, session })
 
   return (
     <section className='pt-16 px-4 md:px-16 relative mb-6'>
-      <img src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" className='absolute w-full left-0 right-0 m-auto blur-3xl opacity-40 -z-10  h-full'/>
+
+      <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt="" className='absolute w-full left-0 right-0 m-auto blur-3xl opacity-40 -z-10  h-full'/>
       <article className='w-full grid grid-cols-[40%_60%] lg:grid-cols-[auto_6fr] gap-x-3 lg:gap-x-8 grid-rows-[auto_6fr] pt-4'>
-        <img src={`https://image.tmdb.org/t/p/original/${poster}`} alt="" className=' w-[400px] shrink-0 aspect-[2/3] row-span-2'/>
+        <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt="" className=' w-[400px] shrink-0 aspect-[2/3] row-span-2'/>
         <header className='flex justify-between items-start lg:mt-1 mb-1 max-lg:flex-col gap-3'>
           <div>
             <h1 className='text-2xl sm:text-3xl md:text-4xl  font-semibold'>{title}</h1>
@@ -32,6 +38,7 @@ export async function MediaInfo ({ id, lang, mediaType, dict }) {
             </div>
           </div>
           <div className='flex items-center gap-2 shrink-0'>
+          <BigFavoriteButton session={session} id={id} mediaType={mediaType} initialIsFavorite={initialIsFavorite} key={media}/>
             <StarRateIcon classes={'w-[28px] md:w-[38px]'}/>
             <div>
               <span className='flex gap-2 items-center font-semibold text-sm md:text-lg -mb-2'>  {rate?.toFixed(1)} / 10 </span>

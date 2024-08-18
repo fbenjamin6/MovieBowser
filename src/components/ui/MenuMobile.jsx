@@ -3,10 +3,12 @@ import React, { useState } from 'react'
 import { CloseIcon, HamburgerIcon, LoupeIcon, GenreMenuIcon, MovieMenuIcon, TVMenuIcon, StarMenuIcon } from './Icons'
 import Link from 'next/link'
 import { LanguageSwitcher } from './LanguageSwitcher'
-import { useBrowser } from '../../hooks/useBrowser'
+import { useBrowser } from '../../lib/hooks/useBrowser'
 import { Accordion } from './Accordion'
+import { UserProfile } from './UserProfile'
+import { LoginButton } from '../auth/LoginButton'
 
-export function MenuMobile ({ menu, genres, lang, movieList, tvList }) {
+export function MenuMobile ({ menu, genres, lang, movieList, tvList, session }) {
   const [isOpen, setIsOpen] = useState(false)
   const [accordion, setAccordion] = useState('')
   const [value, setValue] = useState('')
@@ -86,7 +88,7 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList }) {
             })}
           </Accordion>
 
-          <Link href={'/'} className='text-lg px-4 flex gap-2 items-center group active:text-cyan-400 transition-colors text-white'
+          <Link href={`/${lang}/favorites`} className='text-lg px-4 flex gap-2 items-center group active:text-cyan-400 transition-colors text-white'
           onClick={() => {
             setAccordion('')
             setIsOpen(false)
@@ -102,6 +104,10 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList }) {
             className={'w-full bg-transparent focus-visible:outline-none transition-colors text-white peer'}/>
             <button type="submit" ><LoupeIcon/></button>
           </form>
+
+          {session
+            ? <UserProfile session={session}></UserProfile>
+            : <LoginButton lang={lang}/>}
 
           <LanguageSwitcher/>
         </div>

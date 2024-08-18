@@ -2,7 +2,7 @@
 import React, { useMemo, useContext } from 'react'
 import { HeroMovie } from './HeroMovie'
 import { HeroSliderLi } from './HeroSliderLi'
-import { useHero } from '../../hooks/useHero'
+import { useHero } from '../../lib/hooks/useHero'
 import { MovieIndexContext } from '../../context/movieIndexContext'
 
 export function HeroSlider ({ movies }) {

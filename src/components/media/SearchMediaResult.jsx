@@ -1,6 +1,6 @@
 import React from 'react'
 import { MediaCard } from './MediaCard'
-import { searchMedia } from '../../services/searchMedia'
+import { searchMedia } from '@/lib/services/searchMedia'
 import { MediaInfinityScroll } from './MediaInfinityScroll'
 
 export async function SearchMediaResult ({ lang, searchType, query, genre, mediaType }) {

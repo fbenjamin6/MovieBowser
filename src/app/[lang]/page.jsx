@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { Hero } from '../../components/hero/Hero'
 import { VideoModal } from '../../components/ui/VideoModal'
 import { HeroSkeleton } from '../../components/Skeletons'
-import { getDictionary } from '../../dictionaries/dictionary'
+import { getDictionary } from '../../lib/dictionaries/dictionary'
 import { CarouselWrapper } from '../../components/carousel/CarouselWrapper'
 
 export default async function HomePage ({ params }) {

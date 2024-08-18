@@ -3,17 +3,17 @@ import { Browser } from './Browser'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { NavigationDropdown } from './NavigationDropdown'
 import Link from 'next/link'
-import { getDictionary } from '../../dictionaries/dictionary'
-import { searchGenres } from '../../services/searchGenres'
+import { getDictionary } from '../../lib/dictionaries/dictionary'
+import { searchGenres } from '@/lib/services/searchGenres'
 import { MenuMobile } from './MenuMobile'
 import { LoginButton } from '../auth/LoginButton'
-import { getServerSession } from 'next-auth'
-import { LoginSession } from './LoginSession'
+import { UserProfile } from './UserProfile'
+import { getUserSession } from '@/lib/db/getUserSession'
 
 export async function Menu ({ lang }) {
   const { menu } = await getDictionary(lang)
   const genres = await searchGenres({ lang, mediaType: 'movie' })
-  const session = await getServerSession()
+  const { session, isLoggedIn } = await getUserSession()
 
   const moviesList = [
     {
@@ -82,7 +82,7 @@ export async function Menu ({ lang }) {
             })}
           </NavigationDropdown>
 
-          {/* <Link href={'/'} className='text-lg'>{menu.favorites}</Link> */}
+          <Link href={`/${lang}/favorites`} className='text-lg text-slate-300 hover:text-white'>{menu.favorites}</Link>
         </div>
 
         <div className='flex gap-3 items-center' >
@@ -90,8 +90,8 @@ export async function Menu ({ lang }) {
           <Suspense fallback={<></>}>
             <LanguageSwitcher/>
           </Suspense>
-          {session
-            ? <LoginSession session={session}/>
+          {isLoggedIn
+            ? <UserProfile session={session}/>
             : <LoginButton lang={lang}/>
           }
 

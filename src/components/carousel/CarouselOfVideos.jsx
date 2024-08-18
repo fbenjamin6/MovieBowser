@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import { useCarousel } from '../../hooks/useCarousel'
+import { useCarousel } from '../../lib/hooks/useCarousel'
 import { CarouselArrow } from './CarouselArrow'
 import { MediaVideo } from '../media/MediaVideo'
-import { useLang } from '../../hooks/useLang'
+import { useLang } from '../../lib/hooks/useLang'
 
 export function CarouselOfVideos ({ videos }) {
   const { carouselRef, itemsToShow, isFirst, handleSlide, isScrollNeeded, handleScrollNeeded } = useCarousel({ type: 'video' })

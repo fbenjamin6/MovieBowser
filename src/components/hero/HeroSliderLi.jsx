@@ -1,6 +1,6 @@
 import { React, useContext } from 'react'
 import { MovieIndexContext } from '../../context/movieIndexContext'
-import { useHero } from '../../hooks/useHero'
+import { useHero } from '../../lib/hooks/useHero'
 
 export function HeroSliderLi ({ index, handleClick }) {
   const { movieIndex } = useContext(MovieIndexContext)

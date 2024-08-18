@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { MediaCard } from '../media/MediaCard'
-import { useCarousel } from '../../hooks/useCarousel'
+import { useCarousel } from '../../lib/hooks/useCarousel'
 import { CarouselArrow } from './CarouselArrow'
 
 export function CarouselOfMovies ({ movies, mediaType }) {

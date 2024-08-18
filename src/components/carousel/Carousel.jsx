@@ -1,7 +1,7 @@
 import React from 'react'
 import { CarouselOfMovies } from './CarouselOfMovies'
-import { searchMedia } from '../../services/searchMedia'
-import { searchVideos } from '../../services/searchVideos'
+import { searchMedia } from '@/lib/services/searchMedia'
+import { searchVideos } from '@/lib/services/searchVideos'
 import { CarouselOfVideos } from './CarouselOfVideos'
 
 export async function Carousel ({ searchType, mediaType, areMovies, lang, id }) {
