@@ -2,7 +2,7 @@ import prisma from '@/lib/db/db'
 
 export async function POST (req) {
   const { session } = await req.json()
-  const { name, email, provider } = session.user
+  const { name, email } = session.user
 
   try {
     const { favorites } = await prisma.user.findFirst({

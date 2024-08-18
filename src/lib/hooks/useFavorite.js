@@ -6,7 +6,7 @@ export function useFavorite ({ id, currentMediaType, session, initialIsFavorite 
   async function addFavorite () {
     setIsFavorite(true)
     try {
-      const response = await fetch('/api/db/addFavorite',
+      await fetch('/api/db/addFavorite',
         {
           method: 'POST',
           body: JSON.stringify({
@@ -29,7 +29,7 @@ export function useFavorite ({ id, currentMediaType, session, initialIsFavorite 
   async function removeFavorite () {
     setIsFavorite(false)
     try {
-      const response = await fetch('/api/db/removeFavorite',
+      await fetch('/api/db/removeFavorite',
         {
           method: 'POST',
           body: JSON.stringify({

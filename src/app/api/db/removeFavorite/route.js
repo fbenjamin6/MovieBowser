@@ -1,10 +1,8 @@
 import prisma from '@/lib/db/db'
-import { data } from 'autoprefixer'
-import Email from 'next-auth/providers/email'
 
 export async function POST (req) {
   const { mediaId, mediaType, session } = await req.json()
-  const { name, email, provider } = session.user
+  const { name, email } = session.user
 
   try {
     const findUser = await prisma.user.findFirst({

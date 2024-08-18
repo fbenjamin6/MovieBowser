@@ -30,12 +30,3 @@ export function ListSelector ({ dict }) {
     </>
   )
 }
-
-{ /* <div className='relative text-base sm:text-xl w-48 sm:w-52 group md:hidden'>
-        <button className='flex relative items-center group peer justify-between transition-all w-full bg-slate-800/60 px-2 py-1 z-20 rounded  border-gray-800 border focus-within:border-cyan-500/80'> {dict[searchType]} <ChevronDownIcon classes={'group-focus-within:grayscale-0 group-focus-within:rotate-90 grayscale -rotate-90'}/></button>
-        <div className='bg-slate-900/80 w-full flex flex-col absolute z-10 transition-all duration-300 invisible in-ease opacity-0 peer-focus-within:opacity-100 peer-focus-within:visible -translate-y-10 peer-focus-within:translate-y-0'>
-          <Link href={`/${lang}/${mediaType}/list?type=popular`} className='px-2 py-1'>{dict.popular}</Link>
-          <Link href={`/${lang}/${mediaType}/list?type=top_rated`} className='px-2 py-1'>{dict.top_rated}</Link>
-          <Link href={`/${lang}/${mediaType}/list?type=trending`} className='px-2 py-1'>{dict.trending}</Link>
-        </div>
-      </div> */ }
