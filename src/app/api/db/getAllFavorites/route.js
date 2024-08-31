@@ -1,5 +1,4 @@
 import prisma from '@/lib/db/db'
-import { revalidatePath } from 'next/cache'
 
 export async function POST (req) {
   const { session } = await req.json()
