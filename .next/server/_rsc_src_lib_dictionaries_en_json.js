@@ -17,7 +17,7 @@ exports.modules = {
   \**************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Genres","movies":"Movies","tv":"TV Shows","favorites":"My Favorites","top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"home":{"top_rated":"Top Rated Movies","popular":"Most Popular Movies"},"list":{"top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"mediaPage":{"recommendation":"Recommendations","directing":"Directed by","writters":"Writers","stars":"Stars","cast":"Cast"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Genres","movies":"Movies","tv":"TV Shows","favorites":"My Favorites","top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"home":{"top_rated":"Top Rated Movies","popular":"Most Popular Movies"},"list":{"top_rated":"Top Rated","popular":"Most Popular","trending":"Trending"},"mediaPage":{"recommendation":"Recommendations","directing":"Directed by","writters":"Writers","stars":"Stars","cast":"Cast"},"notFound":"No results found...","logIn":{"logIn":"Log in","logOut":"Log out","text":"Sign in to keep track of your favorites.","google":"Log in with Google","github":"Log in with GitHub"}}');
 
 /***/ })
 

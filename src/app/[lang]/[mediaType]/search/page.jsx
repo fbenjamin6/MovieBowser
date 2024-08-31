@@ -30,6 +30,7 @@ export default async function SearchPage ({ params, searchParams }) {
       <Suspense key={[query, genre]} fallback={<SearchMediaSkeleton/>}>
         <SearchMediaResult searchType={searchType} mediaType={mediaType} query={query} genre={genre} lang={lang}/>
       </Suspense>
+
     </>
   )
 }

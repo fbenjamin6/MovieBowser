@@ -78,7 +78,7 @@ export function StarMenuIcon () {
 }
 
 export function ChevronDownIcon ({ isEnabled, classes }) {
-  const className = `${isEnabled ? 'rotate-90 ' : '-rotate-90 grayscale'} transition-all hidden lg:block`
+  const className = `${isEnabled ? 'rotate-90 ' : '-rotate-90 grayscale'} ${classes} transition-all`
 
   return (
     <Image className={className} width={20} height={20} src='/ui/chevronRight.png' alt=''/>

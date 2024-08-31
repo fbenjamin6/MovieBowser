@@ -1,4 +1,5 @@
 import prisma from '@/lib/db/db'
+import { revalidatePath } from 'next/cache'
 
 export async function POST (req) {
   const { session } = await req.json()
@@ -14,7 +15,7 @@ export async function POST (req) {
         favorites: true
       }
     })
-    // console.log(favorites)
+
     return Response.json({ favorites })
   } catch (error) {
     console.log(error)

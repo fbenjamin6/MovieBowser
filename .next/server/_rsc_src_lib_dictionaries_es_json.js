@@ -17,7 +17,7 @@ exports.modules = {
   \**************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Géneros","movies":"Películas","tv":"Series","favorites":"Mis Favoritos","top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"home":{"top_rated":"Películas mejor valoradas","popular":"Películas más populares"},"list":{"top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"mediaPage":{"recommendation":"Recomendaciones","directing":"Dirección por","writters":"Guión","stars":"Actores","cast":"Elenco"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"menu":{"genres":"Géneros","movies":"Películas","tv":"Series","favorites":"Mis Favoritos","top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"home":{"top_rated":"Películas mejor valoradas","popular":"Películas más populares"},"list":{"top_rated":"Mejor valoradas","popular":"Más populares","trending":"Tendencias"},"mediaPage":{"recommendation":"Recomendaciones","directing":"Dirección por","writters":"Guión","stars":"Actores","cast":"Elenco"},"notFound":"No se encontraron resultados...","logIn":{"logIn":"Iniciar sesión","logOut":"Cerrar sesión","text":"Accede para no perder de vista tus favoritos.","google":"Inicia sesión con Google","github":"Inicia sesión con GitHub"}}');
 
 /***/ })
 

@@ -24,7 +24,7 @@ export function LanguageSwitcher () {
   }
 
   return (
-    <div className='relative font-semibold w-min' >
+    <div className='relative font-semibold w-min max-lg:mt-3.5' >
       <button onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable' className={`relative w-20 flex items-center gap-2  justify-center rounded border transition-colors duration-200 bg-slate-800/30 ${isOpen ? 'border-cyan-500' : 'border-slate-600'} text-white bg-opacity-90 py-0.5 z-50`}>
         {lang.toLocaleUpperCase()} {lang === 'en' ? <FlagENIcon /> : <FlagESIcon />}
       </button>

@@ -14,7 +14,7 @@ export async function POST (req) {
         favorites: true
       }
     })
-    console.log(findUser)
+
     const removeFavorite = await prisma.favorites.deleteMany({
       where: {
         mediaId,
@@ -26,7 +26,6 @@ export async function POST (req) {
 
     })
 
-    console.log(removeFavorite)
     return Response.json({ removeFavorite })
   } catch (error) {
     console.log(error)

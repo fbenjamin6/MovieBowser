@@ -2,6 +2,7 @@ import React from 'react'
 import { MediaCard } from './MediaCard'
 import { searchMedia } from '@/lib/services/searchMedia'
 import { MediaInfinityScroll } from './MediaInfinityScroll'
+import { NotResultsFound } from '../ui/NotResultsFound'
 
 export async function SearchMediaResult ({ lang, searchType, query, genre, mediaType }) {
   await searchType
@@ -15,6 +16,7 @@ export async function SearchMediaResult ({ lang, searchType, query, genre, media
         )
       })}
       <MediaInfinityScroll lang={lang} totalPages={totalPages} searchType={searchType} query={query} mediaType={mediaType} />
+      {media.length === 0 && <NotResultsFound lang={lang}/>}
     </section>
   )
 }

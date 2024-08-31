@@ -1,8 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { isAlreadyFavorite } from '../db/isAlreadyFavorite'
 
 export function useFavorite ({ id, currentMediaType, session, initialIsFavorite }) {
   const [isFavorite, setIsFavorite] = useState(initialIsFavorite)
-  // entre navegaciones se mantiene le estado del favorito?
+
+  useEffect(() => {
+    async function updateFavorite () {
+      const boolean = await isAlreadyFavorite({ id, currentMediaType, session })
+      setIsFavorite(boolean)
+    }
+    updateFavorite()
+  }, [id])
+
   async function addFavorite () {
     setIsFavorite(true)
     try {

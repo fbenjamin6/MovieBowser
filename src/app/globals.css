@@ -39,32 +39,32 @@ section {
 
 .movieList-link-popular.active~.movieList-link-border {
   opacity: 1;
-  transform: translateX(52px);
-}
-
-.movieList-link-rated.active~.movieList-link-border {
-  opacity: 1;
-  transform: translateX(212px);
+  left: calc(16.7% * 1);
 }
 
 .movieList-link-trending.active~.movieList-link-border {
   opacity: 1;
-  transform: translateX(347px);
+  left: calc(16.7% * 3);
+}
+
+.movieList-link-rated.active~.movieList-link-border {
+  opacity: 1;
+  left: calc(16.7% * 5);
 }
 
 .movieList-link-popular:hover~.movieList-link-border {
   opacity: 1;
-  transform: translateX(52px);
-}
-
-.movieList-link-rated:hover~.movieList-link-border {
-  opacity: 1;
-  transform: translateX(212px);
+  left: calc(16.7% * 1);
 }
 
 .movieList-link-trending:hover~.movieList-link-border {
   opacity: 1;
-  transform: translateX(347px);
+  left: calc(16.7% * 3);
+}
+
+.movieList-link-rated:hover~.movieList-link-border {
+  opacity: 1;
+  left: calc(16.7% * 5);
 }
 
 .GroupOfMovies {
@@ -74,7 +74,7 @@ section {
 
 .MovieTopCast {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(299px, 1fr));
 }
 
 
@@ -86,22 +86,24 @@ section {
   color: #fff;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:768px) {
   .GroupOfMovies {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 
   .MovieTopCast {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   }
 
 }
 
-@media screen and (max-width:470px) {
+@media screen and (max-width:505px) {
   .MovieTopCast {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
+}
 
+@media screen and (max-width:470px) {
   .GroupOfMovies {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
@@ -113,4 +115,12 @@ section {
 
 .spiderman {
   mask-image: linear-gradient(to right, #030712 17%, transparent);
+}
+
+.stitch {
+  filter: drop-shadow(0 0 150px rgba(6, 182, 212, 0.7));
+}
+
+.dune {
+  mask-image: linear-gradient(to right, transparent, #030712 50%, transparent);
 }

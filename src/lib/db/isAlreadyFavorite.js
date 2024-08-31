@@ -1,7 +1,8 @@
 export async function isAlreadyFavorite ({ id, currentMediaType, session }) {
   if (!session) return
+
   try {
-    return await fetch('https://movie-bowser.vercel.app/api/db/getAllFavorites',
+    return await fetch('http://localhost:3000/api/db/getAllFavorites',
       {
         method: 'POST',
         body: JSON.stringify({ session }),

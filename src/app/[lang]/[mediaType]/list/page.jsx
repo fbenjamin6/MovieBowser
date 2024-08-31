@@ -24,6 +24,7 @@ export default async function ListPage ({ params, searchParams }) {
         <ListSelector dict={list}/>
         <MediaTypeSwitcher/>
       </section>
+
       <Suspense key={searchType} fallback={<SearchMediaSkeleton/>}>
         <SearchMediaResult searchType={searchType} mediaType={mediaType} lang={lang}/>
 

@@ -8,7 +8,7 @@ import { searchGenres } from '@/lib/services/searchGenres'
 import { MenuMobile } from './MenuMobile'
 import { LoginButton } from '../auth/LoginButton'
 import { UserProfile } from './UserProfile'
-import { getUserSession } from '@/lib/db/getUserSession'
+import { getUserSession } from '@/lib/auth/getUserSession'
 
 export async function Menu ({ lang }) {
   const { menu } = await getDictionary(lang)
@@ -46,7 +46,7 @@ export async function Menu ({ lang }) {
   return (
     <>
       <div className='items-center gap-3 justify-between w-full hidden lg:flex' >
-        <div className='xl:pl-16 h-full flex gap-10'>
+        <div className=' h-full flex gap-7'>
           <NavigationDropdown title={menu.genres} >
             {genres?.map(genre => {
               return (
