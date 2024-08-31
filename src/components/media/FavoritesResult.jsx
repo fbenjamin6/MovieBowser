@@ -14,7 +14,7 @@ export function FavoritesResult ({ lang, session }) {
 
   async function updateFavorites () {
     setLoading(true)
-    const { favorites } = await fetch('http://localhost:3000/api/db/getAllFavorites',
+    const { favorites } = await fetch('https://movie-bowser.vercel.app/api/db/getAllFavorites',
       {
         method: 'POST',
         body: JSON.stringify({ session }),
