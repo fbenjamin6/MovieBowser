@@ -18,9 +18,9 @@ export async function MediaInfo ({ id, lang, mediaType, dict }) {
   return (
     <section className='pt-16 px-4 md:px-16 relative mb-6'>
 
-      <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt="" className='absolute w-full left-0 right-0 m-auto blur-3xl opacity-40 -z-10  h-full'/>
+      <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt={`Background poster of ${title} blurred`} className='absolute w-full left-0 right-0 m-auto blur-3xl opacity-40 -z-10  h-full'/>
       <article className='w-full grid grid-cols-[40%_60%] lg:grid-cols-[auto_6fr] gap-x-3 lg:gap-x-8 grid-rows-[auto_6fr] pt-4'>
-        <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt="" className=' w-[400px] shrink-0 aspect-[2/3] row-span-2'/>
+        <img src={`https://image.tmdb.org/t/p/w500/${poster}`} alt={`Poster of ${title}`} className=' w-[400px] shrink-0 aspect-[2/3] row-span-2'/>
         <header className='flex flex-col xl:flex-row justify-between items-start lg:mt-1 mb-1 max-lg:flex-col gap-3'>
           <div>
             <h1 className='text-2xl sm:text-3xl md:text-4xl  font-semibold'>{title}</h1>

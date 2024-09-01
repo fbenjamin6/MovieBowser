@@ -8,7 +8,7 @@ export async function MediaTopCast ({ id, lang, mediaType }) {
       {Acting?.map((star, index) => {
         return (
           <article key={index} className='flex p-2 sm:p-6 items-center gap-3 sm:gap-6 bg-gray-900 rounded-md max-sm:text-sm'>
-            <img src={star.profile_path ? `https://image.tmdb.org/t/p/original${star.profile_path}` : '/ui/undefinedProfile.png'} alt="" className='w-[50px] sm:w-[100px] aspect-[2/3] rounded-sm'/>
+            <img src={star.profile_path ? `https://image.tmdb.org/t/p/original${star.profile_path}` : '/ui/undefinedProfile.png'} alt={`${star.name}'s picture in the cast`} className='w-[50px] sm:w-[100px] aspect-[2/3] rounded-sm'/>
             <div>
               <h3 className='font-semibold'>{star.name}</h3>
               <span className='text-gray-400'>{star.character}</span>

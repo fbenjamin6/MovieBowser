@@ -28,10 +28,8 @@ export async function POST (req) {
       }
     })
 
-    console.log(newFavorite)
     return Response.json(newFavorite)
   } catch (error) {
-    console.log(error)
     return Response.json(error)
   }
   // return Response.json({ user })

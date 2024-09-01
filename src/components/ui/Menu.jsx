@@ -45,7 +45,7 @@ export async function Menu ({ lang }) {
 
   return (
     <>
-      <div className='items-center gap-3 justify-between w-full hidden lg:flex' >
+      <div className='items-center gap-3 justify-between w-full hidden xl:flex' >
         <div className=' h-full flex gap-7'>
           <NavigationDropdown title={menu.genres} >
             {genres?.map(genre => {

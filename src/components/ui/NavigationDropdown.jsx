@@ -5,7 +5,6 @@ import React from 'react'
 export function NavigationDropdown ({ children, title }) {
   const { isOpen, blurHandler, openHandler } = useDropdown()
 
-  console.log(isOpen)
   return (
     <div className='group' >
       <button aria-label='menuClickable' className={`flex items-center gap-2 text-lg transition-colors ${isOpen ? 'text-white' : ' text-slate-300 hover:text-white'}` } onClick={openHandler}

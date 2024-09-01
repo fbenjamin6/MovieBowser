@@ -17,7 +17,6 @@ export async function POST (req) {
 
     return Response.json({ favorites })
   } catch (error) {
-    console.log(error)
     return Response.json(error)
   }
   // return Response.json({ user })

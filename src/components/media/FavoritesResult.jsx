@@ -7,7 +7,6 @@ import { SearchMediaSkeleton } from '../Skeletons'
 export function FavoritesResult ({ lang, session }) {
   const [favorites, setFavorites] = useState([])
   const [loading, setLoading] = useState(true)
-  console.log('render')
   useEffect(() => {
     updateFavorites()
   }, [session])
@@ -29,7 +28,6 @@ export function FavoritesResult ({ lang, session }) {
     const newFavorites = await Promise.all(
       favorites?.map(async ({ mediaId, mediaType }) => {
         const { media } = await searchMedia({ searchType: 'byId', mediaType, id: mediaId, lang })
-        console.log(mediaType)
         return ({ media, mediaType })
       })
 

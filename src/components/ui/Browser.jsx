@@ -1,31 +1,26 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { LoupeIcon } from './Icons'
 import { useBrowser } from '../../lib/hooks/useBrowser'
 import Link from 'next/link'
-import { useMovies } from '../../lib/hooks/useMovies'
-import { useLang } from '../../lib/hooks/useLang'
 
 export function Browser () {
-  const lang = useLang()
-  const [value, setValue] = useState('')
-  const [isFocus, setIsFocus] = useState(false)
-  const { handleSubmit, isVisible, setIsVisible } = useBrowser({ value, lang })
-  const { movies } = useMovies({ searchType: 'byName', mediaType: 'movie', lang, query: value, quantity: 10 })
+  const { handleSubmit, handleValue, handleFocus, handleVisible, value, isFocus, isVisible, lang, media } = useBrowser()
 
   return (
     <div className='relative'>
-      <form onSubmit={(e) => handleSubmit(e)} action="" className={`flex rounded-md border px-2.5 py-1.5 h-9 transition-all ease-out duration-200 group w-[36px] hover:w-[280px] focus-within:w-[280px] ${isFocus ? 'border-cyan-500' : 'border-transparent hover:border-white'}`}>
-        <input type="text" aria-label='menuClickable' value={value}
-        onChange={(e) => setValue(e.target.value)}
+      <form onSubmit={(e) => handleSubmit(e)} action="" className={`flex rounded-md border px-2.5 py-1.5 h-9 transition-all ease-out duration-200 group  hover:w-[280px]  ${isFocus ? 'border-cyan-500 w-[280px]' : 'border-transparent hover:border-white w-[36px]'}`}>
+        <label htmlFor='browserSearch'></label>
+        <input id='browserSearch' type="text" aria-label='menuClickable' value={value}
+        onChange={(e) => handleValue(e.target.value)}
         onFocus={() => {
-          value?.length > 3 ? setIsVisible(true) : setIsVisible(false)
-          setIsFocus(true)
+          value?.length > 3 ? handleVisible(true) : handleVisible(false)
+          handleFocus(true)
         }}
         onBlur={(e) => {
           if (e.relatedTarget?.className.includes('browserItem')) return
-          setIsVisible(false)
-          setIsFocus(false)
+          handleVisible(false)
+          handleFocus(false)
         }}
 
         className={'w-full bg-transparent focus-visible:outline-none transition-colors text-white'}/>
@@ -33,14 +28,18 @@ export function Browser () {
       </form>
 
       <ul className={`${isVisible ? 'opacity-100 ' : ' opacity-0 pointer-events-none'} transition-opacity flex flex-col rounded absolute bg-gray-900/60 backdrop-blur w-full max-h-[400px] overflow-auto scroll` } >
-        {movies?.map((movie, index) => {
+        {media?.map((media, index) => {
           return (
-            <li key={index} className='hover:bg-gray-950/70 backdrop-blur' onClick={() => setIsVisible(false)}>
-              <Link href={`/movie/${movie.id}`} className='browserItem flex gap-3 items-center p-3'>
-                <img src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="" className='w-[50px]'/>
+            <li key={index} className='hover:bg-gray-950/70 backdrop-blur'>
+              <Link href={`/${lang}/${media.mediaType}/title?id=${media.id}`} className='browserItem flex gap-3 items-center p-3'
+              onClick={() => {
+                handleFocus(false)
+                handleVisible(false)
+              }}>
+                <img src={`https://image.tmdb.org/t/p/w200/${media.poster}`} alt={`Poster of ${media.title}`} className='w-[50px]'/>
                 <div>
-                  <h4 className='font-semibold'>{movie.title}</h4>
-                  <span className='text-gray-400'>{movie.date?.slice(0, 4)}</span>
+                  <h4 className='font-semibold'>{media.title}</h4>
+                  <span className='text-gray-400'>{media.date?.slice(0, 4)}</span>
                 </div>
               </Link>
             </li>

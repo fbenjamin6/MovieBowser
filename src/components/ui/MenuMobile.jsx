@@ -12,7 +12,7 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList, session }) 
   const [isOpen, setIsOpen] = useState(false)
   const [accordion, setAccordion] = useState('')
   const [value, setValue] = useState('')
-  const { handleSubmit } = useBrowser({ value, lang })
+  const { handleSubmit } = useBrowser()
 
   const handleAccordion = (name) => {
     if (accordion === name) return setAccordion('')
@@ -21,7 +21,7 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList, session }) 
 
   return (
     <>
-    <div className='flex lg:hidden'>
+    <div className='flex xl:hidden'>
       <button onClick={() => setIsOpen(true)} className={`${isOpen ? 'invisible' : 'visible'} transition-all`}>
         <HamburgerIcon/>
       </button>
@@ -99,7 +99,8 @@ export function MenuMobile ({ menu, genres, lang, movieList, tvList, session }) 
 
         <div className='px-4'>
           <form onSubmit={(e) => handleSubmit(e)} action="" className={'flex rounded-md border bg-gray-950/80 focus-within:bg-gray-900 border-gray-500 focus-within:border-cyan-500 px-2.5 py-1.5 h-9 transition duration-200 group mb-4'}>
-            <input type="text" value={value}
+            <label htmlFor="browserSearchMobile"></label>
+            <input id='browserSearchMobile' type="text" value={value}
             onChange={(e) => setValue(e.target.value)}
             className={'w-full bg-transparent focus-visible:outline-none transition-colors text-white peer'}/>
             <button type="submit" ><LoupeIcon/></button>

@@ -22,7 +22,7 @@ export function MediaVideo ({ video, handleScrollNeeded }) {
        before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t
       after:content-playVideoIcon after:absolute after:left-1/2 after:-translate-x-1/2 after:top-1/2 after:-translate-y-1/2 after:opacity-0 after:transition after:duration-300 after:hover:opacity-100
       `}>
-        <img onLoad={handleScrollNeeded} className='w-full h-full object-cover' src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`} alt="" />
+        <img onLoad={handleScrollNeeded} className='w-full h-full object-cover' src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`} alt={`Thumbnail of the video: ${video.name}`} />
         <header className='absolute self-end z-10 p-2 text-lg'>
           <h3 >{video.name}</h3>
         </header>

@@ -1,4 +1,4 @@
-import { API_OPTIONS } from '../utils/constants'
+import { API_OPTIONS, LANGS } from '../utils/constants'
 
 export async function searchCredits ({ id, lang, mediaType }) {
   if (id === undefined) return
@@ -9,7 +9,7 @@ export async function searchCredits ({ id, lang, mediaType }) {
     })
     return included
   }
-  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=${lang}`, API_OPTIONS)
+  return fetch(`https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=${LANGS[lang]}`, API_OPTIONS)
     .then(response => response.json())
     .then(movieCredits => {
       const newCredits = {

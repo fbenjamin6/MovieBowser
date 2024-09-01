@@ -5,3 +5,8 @@ export const API_OPTIONS = {
     Authorization: `Bearer ${process.env.TMDB_AUTHORIZATION}`
   }
 }
+
+export const LANGS = {
+  es: 'es-MX',
+  en: 'en-US'
+}

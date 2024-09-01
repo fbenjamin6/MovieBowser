@@ -29,6 +29,7 @@ export function useTrailer ({ id }) {
       }
       return false
     })
+
     return setTrailerKey(newTrailer?.key)
   }, [videos])
 

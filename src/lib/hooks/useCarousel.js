@@ -44,7 +44,6 @@ export function useCarousel ({ type }) {
 
   function handleSlide (direction) {
     const carousel = carouselRef.current
-    console.log(carousel.scrollLeft, carousel.offsetWidth, carousel.scrollWidth)
     const isAtTheEnd = carousel.scrollLeft + carousel.offsetWidth === carousel.scrollWidth
     const itemWidth = carousel.firstElementChild?.clientWidth || 0
 

@@ -14,7 +14,7 @@ export function MediaCard ({ media, mediaType, lastMovieRef, newClasses }) {
 
   return (
     <Link href={`/${lang}/${mediaType || getMediaType}/title?id=${id}`} ref={lastMovieRef} className={classes} >
-        <img src={imgSrc} alt="" className='h-full' />
+        <img src={imgSrc} alt={`Poster of ${title}`} className='h-full' />
         <div className='py-1.5 px-2.5 z-20 absolute w-full' >
           <h3 className=' font-medium'>{title}</h3>
           <div className='flex justify-between text-sm sm:text-base items-center'>

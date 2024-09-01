@@ -1,17 +1,15 @@
 'use server'
-import { unstable_noStore as noStore } from 'next/cache'
-import { API_OPTIONS } from '../utils/constants'
+import { API_OPTIONS, LANGS } from '../utils/constants'
 
 export async function searchMedia ({ searchType, mediaType, id, query, page, genre, lang, quantity }) {
-  noStore()
   const searchs = {
-    trending: `https://api.themoviedb.org/3/trending/${mediaType}/week?language=${lang}&page=${page}`,
-    top_rated: `https://api.themoviedb.org/3/${mediaType}/top_rated?language=${lang}&page=${page}`,
-    popular: `https://api.themoviedb.org/3/${mediaType}/popular?language=${lang}&page=${page}`,
-    byId: `https://api.themoviedb.org/3/${mediaType}/${id}?language=${lang}`,
-    byRecommendation: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=${lang}&page=1`,
-    byName: `https://api.themoviedb.org/3/search/${mediaType}?query=${query}&include_adult=false&language=${lang}&page=${page}`,
-    byGenre: `https://api.themoviedb.org/3/discover/${mediaType}?include_adult=false&include_video=false&language=${lang}&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
+    trending: `https://api.themoviedb.org/3/trending/${mediaType}/week?language=${LANGS[lang]}&page=${page}`,
+    top_rated: `https://api.themoviedb.org/3/${mediaType}/top_rated?language=${LANGS[lang]}&page=${page}`,
+    popular: `https://api.themoviedb.org/3/${mediaType}/popular?language=${LANGS[lang]}&page=${page}`,
+    byId: `https://api.themoviedb.org/3/${mediaType}/${id}?language=${LANGS[lang]}`,
+    byRecommendation: `https://api.themoviedb.org/3/${mediaType}/${id}/recommendations?language=${LANGS[lang]}&page=1`,
+    byName: `https://api.themoviedb.org/3/search/${mediaType}?query=${query}&include_adult=false&language=${LANGS[lang]}&page=${page}`,
+    byGenre: `https://api.themoviedb.org/3/discover/${mediaType}?include_adult=false&include_video=false&language=${LANGS[lang]}&page=${page}&sort_by=popularity.desc&with_genres=${genre}`
   }
 
   if (searchType === 'byName' && query === undefined) return
@@ -20,12 +18,14 @@ export async function searchMedia ({ searchType, mediaType, id, query, page, gen
     .then(res => {
       const totalPages = res.total_pages
       const searchResults = res.results ? res.results : [res]
+      console.log(searchResults)
       const filteredMedia = searchResults.filter(media => {
         if (!media.poster_path || !media.backdrop_path || !media.vote_average || !media.vote_count) {
           return false
         } else { return true }
       })
       const mappedMedia = filteredMedia?.map(media => {
+        console.log(media)
         return ({
           id: media.id,
           title: media.title || media.name,
@@ -36,7 +36,9 @@ export async function searchMedia ({ searchType, mediaType, id, query, page, gen
           voteCount: media.vote_count,
           date: media.release_date,
           genres: media.genres,
-          duration: media.runtime || { seasons: media.number_of_seasons, episodes: media.number_of_episodes }
+          duration: media.runtime || { seasons: media.number_of_seasons, episodes: media.number_of_episodes },
+          popularity: media.popularity,
+          mediaType: media.release_date ? 'movie' : 'tv'
         })
       })
 

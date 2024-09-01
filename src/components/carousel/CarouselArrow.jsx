@@ -9,7 +9,7 @@ export function CarouselArrow ({ direction, isFirst, isScrollNeeded, handleSlide
 
   return (
     <button className={'absolute max-md:-translate-y-1/2 max-md:top-2/4 p-1 lg:p-2 z-30 bg-slate-950/60 md:bg-gray-900/50 h-1/4 md:h-full flex items-center transition-all md:grayscale md:hover:grayscale-0  md:opacity-0 ' + classes} onClick={() => handleSlide(direction)}>
-      <Image className='max-sm:w-6 max-md:w-8' src={imgSrc} width={45} height={100} alt="" />
+      <Image className='max-sm:w-6 max-md:w-8' src={imgSrc} width={45} height={90} alt="Carousel arrow" />
     </button>
   )
 }
