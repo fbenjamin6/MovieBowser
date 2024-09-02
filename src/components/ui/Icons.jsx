@@ -37,7 +37,7 @@ export function FlagESIcon () {
 
 export function FlagENIcon () {
   return (
-    <Image className='w-7 ' width={24} height={13} src='/ui/ENFlag.png' alt="Flag of the United States" />
+    <Image className='w-7 ' width={24} height={15} src='/ui/ENFlag.png' alt="Flag of the United States" />
   )
 }
 
