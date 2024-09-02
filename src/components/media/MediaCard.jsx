@@ -9,12 +9,12 @@ export function MediaCard ({ media, mediaType, lastMovieRef, newClasses }) {
   const getMediaType = useParams()?.mediaType
   const lang = useLang()
   const { id, title, date, rate, poster } = media
-  const imgSrc = `https://image.tmdb.org/t/p/w500${poster}`
+  const imgSrc = `https://image.tmdb.org/t/p/w342${poster}`
   const classes = newClasses + ' MovieCard  relative aspect-[2/3]  rounded bg-contain bg-center bg-no-repeat flex flex-col gap-2 rounded-b-md justify-end before:content-[""] before:top-0 before:w-full before:h-full before:absolute before:bg-gradient-to-t hover:opacity-90 transition from-black via-black/20 to-transparent '
 
   return (
     <Link href={`/${lang}/${mediaType || getMediaType}/title?id=${id}`} ref={lastMovieRef} className={classes} >
-        <img src={imgSrc} alt={`Poster of ${title}`} className='h-full' />
+        <img src={imgSrc} alt={`Poster of ${title}`} className='w-full h-full' />
         <div className='py-1.5 px-2.5 z-20 absolute w-full' >
           <h3 className=' font-medium'>{title}</h3>
           <div className='flex justify-between text-sm sm:text-base items-center'>

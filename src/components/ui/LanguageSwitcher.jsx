@@ -31,8 +31,16 @@ export function LanguageSwitcher () {
       <div className={`absolute w-full bg-slate-800 bg-opacity-90 rounded-b transition-all duration-200 
         ${isOpen ? 'opacity-100 translate-y-0' : ' opacity-0 -translate-y-2 pointer-events-none'}`}>
         <ul>
-          <Link href={redirectedPathName('en')} scroll={false} onClick={openHandler} className='flex items-center justify-center gap-2 py-1 cursor-pointer hover:bg-slate-700/20'>EN <FlagENIcon /></Link>
-          <Link href={redirectedPathName('es')} scroll={false} onClick={openHandler} className='flex items-center justify-center gap-2.5 py-1 cursor-pointer hover:bg-slate-700/20'>ES <FlagESIcon /></Link>
+          <li>
+          <Link href={redirectedPathName('en')} scroll={false} onClick={openHandler} className='flex items-center justify-center gap-2 py-1 cursor-pointer hover:bg-slate-700/20'>
+            EN <FlagENIcon />
+          </Link>
+          </li>
+          <li>
+            <Link href={redirectedPathName('es')} scroll={false} onClick={openHandler} className='flex items-center justify-center gap-2.5 py-1 cursor-pointer hover:bg-slate-700/20'>
+              ES <FlagESIcon />
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

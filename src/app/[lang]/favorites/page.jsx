@@ -7,7 +7,6 @@ import { getDictionary } from '@/lib/dictionaries/dictionary'
 export default async function FavoritesPage ({ params }) {
   const { lang } = params
   const { favorites } = await getDictionary(lang)
-  console.log(favorites)
   const { session } = await getUserSession()
   if (!session) return redirect(`/${lang}/auth`)
 

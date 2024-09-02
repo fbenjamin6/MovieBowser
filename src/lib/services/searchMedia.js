@@ -18,14 +18,12 @@ export async function searchMedia ({ searchType, mediaType, id, query, page, gen
     .then(res => {
       const totalPages = res.total_pages
       const searchResults = res.results ? res.results : [res]
-      console.log(searchResults)
       const filteredMedia = searchResults.filter(media => {
         if (!media.poster_path || !media.backdrop_path || !media.vote_average || !media.vote_count) {
           return false
         } else { return true }
       })
       const mappedMedia = filteredMedia?.map(media => {
-        console.log(media)
         return ({
           id: media.id,
           title: media.title || media.name,

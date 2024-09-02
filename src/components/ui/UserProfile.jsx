@@ -14,7 +14,7 @@ export function UserProfile ({ session }) {
 
   return (
     <div className={'  relative  '} >
-      <button className={`flex items-center w-full xl:w-48 gap-1.5 px-2 py-1.5 transition-all relative ${isOpen ? 'xl:bg-slate-800/80 rounded-t' : 'xl:hover:bg-slate-800/40 rounded'}`} onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable'>
+      <button className={`flex items-center w-full xl:max-w-48 gap-2 px-2 py-1.5 transition-all relative ${isOpen ? 'xl:bg-slate-800/80 rounded-t' : 'xl:hover:bg-slate-800/40 rounded'}`} onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable'>
         <img src={image} alt={`Profile picture of ${name}`} className='rounded-full w-6'/>
         <span className=' overflow-hidden text-ellipsis whitespace-nowrap'>{name}</span>
         <ChevronDownIcon isEnabled={isOpen} classes={'hidden xl:block'} />
