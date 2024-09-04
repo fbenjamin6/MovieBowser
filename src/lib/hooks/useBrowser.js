@@ -1,5 +1,5 @@
 import { useParams, useRouter } from 'next/navigation'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLang } from './useLang'
 import { useDebounce, useDebouncedCallback } from 'use-debounce'
 import { searchMedia } from '../services/searchMedia'
