@@ -1,4 +1,6 @@
 {
   "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/[mediaType]/title/page": "app/[lang]/[mediaType]/title/page.js",
+  "/[lang]/[mediaType]/search/page": "app/[lang]/[mediaType]/search/page.js",
   "/[lang]/[mediaType]/list/page": "app/[lang]/[mediaType]/list/page.js"
 }

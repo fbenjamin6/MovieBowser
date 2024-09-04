@@ -26,11 +26,12 @@ export function useCarousel ({ type }) {
   }, [itemsToShow])
 
   function calculateItemsToShow (screenWidth) {
-    if (screenWidth > 1536) return setItemsToShow(type === 'movie' ? 7 : 4)
+    if (screenWidth > 1536) return setItemsToShow(type === 'movie' ? 6 : 4)
     if (screenWidth > 1280) return setItemsToShow(type === 'movie' ? 6 : 3)
     if (screenWidth > 1024) return setItemsToShow(type === 'movie' ? 5 : 3)
     if (screenWidth > 768) return setItemsToShow(type === 'movie' ? 3 : 2)
-    else return setItemsToShow(type === 'movie' ? 2 : 1)
+    if (screenWidth > 640) return setItemsToShow(type === 'movie' ? 3 : 2)
+    if (screenWidth < 640)setItemsToShow(type === 'movie' ? 2 : 1)
   }
 
   function handleScrollNeeded () {

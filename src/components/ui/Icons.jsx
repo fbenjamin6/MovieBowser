@@ -4,7 +4,7 @@ import Image from 'next/image'
 export function StarRateIcon ({ classes }) {
   const className = `inline ${classes}`
   return (
-    <Image src='/ui/star.png' width={22} height={22} alt='Star icon accompanying the rating score' className={className}/>
+    <Image src='/ui/starRate.png' width={18} height={18} alt='Star icon accompanying the rating score' className={className}/>
   )
 }
 
@@ -31,13 +31,13 @@ export function LoupeIcon () {
 
 export function FlagESIcon () {
   return (
-    <Image className='w-7 ' width={24} height={13} src='/ui/ESFlag.png' alt="Flag of Argentina" />
+    <Image className='w-[28px] aspect-[8/5]' width={24} height={15} src='/ui/ESFlag.png' alt="Flag of Argentina" />
   )
 }
 
 export function FlagENIcon () {
   return (
-    <Image className='w-7 ' width={24} height={15} src='/ui/ENFlag.png' alt="Flag of the United States" />
+    <Image className='w-[28px] aspect-[8/5]' width={24} height={15} src='/ui/ENFlag.png' alt="Flag of the United States" />
   )
 }
 

@@ -7,6 +7,7 @@ import { SearchMediaSkeleton } from '../Skeletons'
 export function FavoritesResult ({ lang, session }) {
   const [favorites, setFavorites] = useState([])
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     updateFavorites()
   }, [session])
@@ -41,7 +42,7 @@ export function FavoritesResult ({ lang, session }) {
     <>
       {loading
         ? <SearchMediaSkeleton/>
-        : (<section className='GroupOfMovies gap-2 sm:gap-4 md:gap-5 pt-5 sm:pt-7 md:pt-12 px-4 md:px-16'>
+        : (<section className='GroupOfMovies gap-2 sm:gap-4 md:gap-5 pt-5 sm:pt-7 md:pt-12 px-4 md:px-16 mb-24 md:mb-36'>
             {favorites.map(({ media, mediaType }) => {
               return (
               <MediaCard key={media[0].id} media={media[0]} mediaType={mediaType}/>

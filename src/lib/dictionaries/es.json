@@ -10,7 +10,20 @@
   },
   "home": {
     "top_rated": "Películas mejor valoradas",
-    "popular": "Películas más populares"
+    "popular": "Películas más populares",
+    "movies": {
+      "top_rated": "Películas mejor valoradas",
+      "popular": "Películas más populares"
+    },
+    "tv": {
+      "top_rated": "Series mejor valoradas",
+      "popular": "Series más populares",
+      "trending": {
+        "title": "Descubre las series en tendencia",
+        "text": "Explora entre lo mejor del entretenimiento con las series más destacadas del momento. Desde emocionantes estrenos hasta las más comentadas por la crítica, descubre lo que todos están viendo. ¡Haz clic y no te pierdas nada!",
+        "button": "VER TENDENCIAS"
+      }
+    }
   },
   "list": {
     "top_rated": "Mejor valoradas",
@@ -32,5 +45,16 @@
     "google": "Inicia sesión con Google",
     "github": "Inicia sesión con GitHub"
   },
-  "favorites": "Favoritos"
+  "favorites": "Favoritos",
+  "footer": {
+    "top_rated": "Mejor valoradas",
+    "popular": "Más populares",
+    "trending": "Tendencias",
+    "movies": "PELÍCULAS",
+    "tv": "SERIES",
+    "creator": "EL CREADOR",
+    "home": "Home",
+    "genres": "Géneros",
+    "favorites": "Favoritos"
+  }
 }

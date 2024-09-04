@@ -124,3 +124,9 @@ section {
 .dune {
   mask-image: linear-gradient(to right, transparent, #030712 50%, transparent);
 }
+
+.trendingSeries {
+  /* mask-image: linear-gradient(320deg, rgba(3, 7, 18, 0.5) 0%, rgba(3, 7, 18, 0.1) 45%, rgba(3, 7, 18, 0.1) 100%); */
+  mask-image: linear-gradient(320deg, rgba(3, 7, 18, 0.50) 0%, rgba(3, 7, 18, 0.01) 100%);
+  filter: blur(4px);
+}

@@ -31,12 +31,12 @@ export function useBrowser () {
     handleVisible(true)
   }, 300)
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (value.length < 3) return
     const searchQuery = `/${lang}/${mediaType || 'movie'}/search?query=${value}`
     router.push(searchQuery)
-  }, [])
+  }
 
   const handleValue = (e) => {
     setValue(e)

@@ -3,9 +3,9 @@ import { CarouselOfMediaSkeleton, CarouselOfVideosSkeleton } from '../Skeletons'
 import { Carousel } from './Carousel'
 import { CarouselTitleLink } from './CarouselTitleLink'
 
-export async function CarouselWrapper ({ searchType, mediaType, href, children, areMovies, lang, id }) {
+export async function CarouselWrapper ({ searchType, mediaType, href, children, areMovies, lang, id, classes }) {
   return (
-    <section className='px-4 md:px-16 py-8 md:py-20  w-full'>
+    <section className={`px-4 md:px-16 py-8 md:py-12  w-full ${classes}`}>
       {href &&
       <CarouselTitleLink href={ href }>
         {children}

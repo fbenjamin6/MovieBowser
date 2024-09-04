@@ -24,8 +24,8 @@ export function LanguageSwitcher () {
   }
 
   return (
-    <div className='relative font-semibold w-min max-xl:mt-3.5' >
-      <button onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable' className={`relative w-20 flex items-center gap-2  justify-center rounded border transition-colors duration-200 bg-slate-800/30 ${isOpen ? 'border-cyan-500' : 'border-slate-600'} text-white bg-opacity-90 py-0.5 z-50`}>
+    <div className={'relative font-semibold w-min max-xl:mt-3.5 '} >
+      <button onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable' className={`relative w-20 flex items-center gap-2  justify-center rounded border transition-colors duration-200 ${isOpen ? 'border-cyan-500 bg-slate-800' : 'border-slate-600 bg-slate-800/20 xl:hover:bg-slate-800/50'} text-white bg-opacity-90 py-0.5 z-50`}>
         {lang.toLocaleUpperCase()} {lang === 'en' ? <FlagENIcon /> : <FlagESIcon />}
       </button>
       <div className={`absolute w-full bg-slate-800 bg-opacity-90 rounded-b transition-all duration-200 

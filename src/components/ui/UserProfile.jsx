@@ -13,13 +13,13 @@ export function UserProfile ({ session }) {
   }
 
   return (
-    <div className={'  relative  '} >
-      <button className={`flex items-center w-full xl:max-w-48 gap-2 px-2 py-1.5 transition-all relative ${isOpen ? 'xl:bg-slate-800/80 rounded-t' : 'xl:hover:bg-slate-800/40 rounded'}`} onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable'>
+    <div className={'relative' } >
+      <button className={`flex items-center overflow-hidden  max-h-[36px] w-full xl:max-w-48 gap-2 px-2 py-1.5 transition-all relative ${isOpen ? 'xl:bg-slate-800/80 rounded-t' : 'xl:hover:bg-slate-800/50 rounded xl:bg-slate-800/20 '}`} onClick={openHandler} onBlur={blurHandler} aria-label='menuClickable'>
         <img src={image} alt={`Profile picture of ${name}`} className='rounded-full w-6'/>
         <span className=' overflow-hidden text-ellipsis whitespace-nowrap'>{name}</span>
         <ChevronDownIcon isEnabled={isOpen} classes={'hidden xl:block'} />
       </button>
-      <button onClick={handleSignOut} className={` xl:absolute top-full flex justify-between max-xl:mt-1 max-xl:mb-2 px-2 py-1.5  w-full transition-all rounded-b xl:bg-slate-800/80 ${isOpen ? 'xl:opacity-100' : 'xl:-translate-y-3 xl:opacity-0 xl:pointer-events-none'} group`}>
+      <button onClick={handleSignOut} className={` xl:absolute  top-full flex justify-between max-xl:mt-1 max-xl:mb-2 px-2 py-1.5  w-full transition-all rounded-b xl:bg-slate-800/80 ${isOpen ? 'xl:opacity-100 ' : 'xl:-translate-y-3 xl:opacity-0 xl:pointer-events-none'} group`}>
         <span>Log out</span>
         <LogOutIcon/>
       </button>

@@ -17,6 +17,7 @@ export async function generateMetadata ({ params }) {
       },
       description: 'Explora películas y series, desde clásicos icónicos hasta los últimos estrenos, en Movie Browser. Regístrate para seguir tus favoritos y nunca perderte lo mejor del cine y el streaming.',
       applicationName: 'Movie Bowser',
+      referrer: 'origin-when-cross-origin',
       keywords: ['Movie Browser',
         'películas',
         'series',
@@ -65,6 +66,7 @@ export async function generateMetadata ({ params }) {
         default: 'Movie Bowser'
       },
       applicationName: 'Movie Bowser',
+      referrer: 'origin-when-cross-origin',
       description: 'Explore movies and series, from iconic classics to the latest releases, on Movie Browser. Sign up to follow your favorites and never miss the best of cinema and streaming.',
       keywords: ['Movie Browser',
         'movies',
@@ -122,10 +124,10 @@ export default async function RootLayout ({ children, params }) {
   const { lang } = params
   return (
     <html lang={lang} className={`${DMSansFont.className} antialiased`}>
-      <body className='grid min-h-[90vh] grid-rows-[100%_min-content] '>
+      <body className='grid min-h-[90vh] grid-rows-[min-content] '>
         <Header lang={lang}/>
-        <main className='relative overflow-hidden'>{children}</main>
-        <Footer/>
+        <main className='relative overflow-hidden min-h-[90vh]'>{children}</main>
+        <Footer lang={lang}/>
       </body>
     </html>
   )

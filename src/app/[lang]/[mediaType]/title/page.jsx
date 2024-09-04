@@ -40,14 +40,14 @@ export default async function MediaPage ({ params, searchParams }) {
         Videos
       </CarouselWrapper>
 
-      <section className='px-4 md:px-16 mb-12 md:mb-28 mt-8 md:mt-20'>
+      <section className='px-4 md:px-16 mb-12 md:mb-24 mt-8 md:mt-20'>
         <h2 className='text-2xl mb-2 md:mb-6'>{mediaPage.cast}</h2>
         <Suspense fallback={<MediaTopCastSkeleton/>}>
           <MediaTopCast id={id} lang={lang} mediaType={mediaType}/>
         </Suspense>
       </section>
 
-      <CarouselWrapper areMovies={true} searchType={'byRecommendation'} mediaType={mediaType} id={id} lang={lang}>
+      <CarouselWrapper areMovies={true} searchType={'byRecommendation'} mediaType={mediaType} id={id} lang={lang} classes={'mb-24 md:mb-36'}>
         {mediaPage.recommendation}
       </CarouselWrapper>
     </>

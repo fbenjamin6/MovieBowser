@@ -39,6 +39,10 @@ const handler = nextAuth.default({
 
       return true
     }
+  },
+  pages: {
+    signIn: '/auth',
+    signOut: '/auth'
   }
 })
 

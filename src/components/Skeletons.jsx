@@ -6,8 +6,7 @@ const carouselClasses =
    sm:w-[calc((100%-3*0.6rem)/3)]
    md:w-[calc((100%-3*0.6rem)/3)]
    lg:w-[calc((100%-5*0.6rem)/5)]
-   xl:w-[calc((100%-6*0.6rem)/6)]
-   2xl:w-[calc((100%-7*0.6rem)/7)]`
+   xl:w-[calc((100%-6*0.6rem)/6)]`
 
 export function MediaCardSkeleton ({ classes }) {
   return (
@@ -175,7 +174,7 @@ export async function MediaTopCastSkeleton () {
 
 export function SearchMediaSkeleton () {
   return (
-    <div className='GroupOfMovies gap-2 sm:gap-4 md:gap-5 pt-5 sm:pt-7 md:pt-12 px-4 md:px-16 max-w-[1600px] m-auto'>
+    <div className='GroupOfMovies gap-2 sm:gap-4 md:gap-5 pt-5 sm:pt-7 md:pt-12 px-4 md:px-16 max-w-[1600px] m-auto mb-24 md:mb-36'>
       <MediaCardSkeleton/>
       <MediaCardSkeleton/>
       <MediaCardSkeleton/>
