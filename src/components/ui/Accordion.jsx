@@ -19,5 +19,3 @@ export function Accordion ({ isEnabled, title, handleAccordion, children }) {
     </div>
   )
 }
-
-// grid grid-cols-2 gap-y-3 gap-x-8 PARA GENEROS

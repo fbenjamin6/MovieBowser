@@ -2,10 +2,12 @@
   "node": {
     "d7eb6911811064bb0dc1d3802003f2875d04086f": {
       "workers": {
-        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cauth%5C%5CgetUserSession.js%22%2C%5B%22getUserSession%22%5D%5D%5D&__client_imported__=!"
+        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cauth%5C%5CgetUserSession.js%22%2C%5B%22getUserSession%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/favorites/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/[lang]/page": "rsc"
+        "app/[lang]/page": "rsc",
+        "app/[lang]/favorites/page": "action-browser"
       }
     },
     "0318a116866466fb7aa3ef00ca510d7ce1ab18ef": {
@@ -18,13 +20,15 @@
     },
     "09b4f5687808abbafb2ab18740743ce0146e6306": {
       "workers": {
-        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cauth%5C%5CgetUserSession.js%22%2C%5B%22getUserSession%22%5D%5D%5D&__client_imported__=!"
+        "app/[lang]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchMedia.js%22%2C%5B%22searchMedia%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cservices%5C%5CsearchVideos.js%22%2C%5B%22searchVideos%22%5D%5D%2C%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cauth%5C%5CgetUserSession.js%22%2C%5B%22getUserSession%22%5D%5D%5D&__client_imported__=!",
+        "app/[lang]/favorites/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5Cweb%5C%5CReact%20projects%5C%5CMovieBowser%5C%5Csrc%5C%5Clib%5C%5Cauth%5C%5CgetUserSession.js%22%2C%5B%22getUserSession%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
-        "app/[lang]/page": "rsc"
+        "app/[lang]/page": "rsc",
+        "app/[lang]/favorites/page": "rsc"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "pUb1eCPVay/xmgU/xZJ3yBPoXs5dWgFgJ1Hswdh6wxo="
+  "encryptionKey": "2YK8rU0K1++6CBa/24taacHFuPlySaxwbkBaHKFnhtg="
 }
