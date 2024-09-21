@@ -12,19 +12,19 @@ export async function Footer ({ lang }) {
           <h3 className='font-medium mb-1'>{footer.creator}</h3>
           <ul className='flex flex-col gap-1'>
           <li className='text-gray-400 hover:text-cyan-500 transition-colors group'>
-              <Link href={''} className='flex gap-1 items-center'>
+              <Link target='_blank' href={'https://www.linkedin.com/in/federicobenjamin/'} className='flex gap-1 items-center'>
                 <Image src={'/ui/linkedinIcon.png'} alt='Linkedin icon' width={20} height={20} className='transition-all grayscale group-hover:grayscale-0'/>
                 <span>Linkedin</span>
               </Link>
             </li>
             <li className='text-gray-400 hover:text-cyan-500 transition-colors group'>
-              <Link href={''} className='flex gap-1 items-center'>
+              <Link target='_blank' href={'https://github.com/fbenjamin6'} className='flex gap-1 items-center'>
                 <Image src={'/ui/gitHubIcon.png'} alt='GitHub icon' width={20} height={20} className='transition-all grayscale group-hover:grayscale-0'/>
                 <span>GitHub</span>
               </Link>
             </li>
             <li className='text-gray-400 hover:text-cyan-500 transition-colors group'>
-              <Link href={''} className='flex gap-1 items-center'>
+              <Link target='_blank' href={'https://fbenjamin.netlify.app/'} className='flex gap-1 items-center'>
                 <Image src={'/ui/portfolioIcon.png'} alt='Portfolio icon' width={20} height={20} className='transition-all grayscale group-hover:grayscale-0'/>
                 <span>Portfolio</span>
               </Link>
