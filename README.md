@@ -1,6 +1,5 @@
 # ![MovieBowserLogo](https://movie-bowser.vercel.app/_next/image?url=%2Flogo%2FbowserLogo.png&w=48&q=75)  Movie Bowser 
 
-## Descripción
 **Movie Bowser** es una aplicación web para buscar películas y series. Permite a los usuarios explorar una amplia base de datos de películas y series utilizando la API de The Movie Database (TMDB). Inicialmente, la desarrollé únicamente con React y utilicé Vite como herramienta de desarrollo. A mitad del proyecto, decidí migrarlo completamente a Next.js, lo que no solo mejoró su rendimiento, sino que también me brindó una valiosa oportunidad para aprender y experimentar con esta tecnología.
 
 Los usuarios pueden explorar títulos por género, nombre, puntuación o popularidad, cada una con una página dedicada que incluye trailers, recomendaciones y detalles del elenco. La aplicación también ofrece autenticación mediante Google y GitHub, permitiendo a los usuarios guardar sus películas favoritas de manera segura. 
