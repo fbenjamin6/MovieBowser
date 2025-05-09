@@ -24,7 +24,7 @@ export async function Footer ({ lang }) {
               </Link>
             </li>
             <li className='text-gray-400 hover:text-cyan-500 transition-colors group'>
-              <Link target='_blank' href={'https://fbenjamin.netlify.app/'} className='flex gap-1 items-center'>
+              <Link target='_blank' href={'https://www.federicobenjamin.com/'} className='flex gap-1 items-center'>
                 <Image src={'/ui/portfolioIcon.png'} alt='Portfolio icon' width={20} height={20} className='transition-all grayscale group-hover:grayscale-0'/>
                 <span>Portfolio</span>
               </Link>
